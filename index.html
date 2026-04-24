@@ -140,7 +140,7 @@
                         <p class="text-[12px] leading-[1.5] text-text-main">予約優先<br>店頭受け取り</p>
                     </div>
                 </div>
-                <a href="#cta-section" class="block w-full bg-gold text-base-black font-serif py-4 px-6 rounded-sm text-[15px] tracking-[0.12em] hover:bg-[#E8CE73] transition-colors duration-300">
+                <a href="#" onclick="openPortfolioModal(); return false;" class="block w-full bg-gold text-base-black font-serif py-4 px-6 rounded-sm text-[15px] tracking-[0.12em] hover:bg-[#E8CE73] transition-colors duration-300">
                     本日分を予約する
                 </a>
                 <p class="mt-4 text-[11px] tracking-[0.12em] text-[rgba(255,255,255,0.6)]">
@@ -379,7 +379,7 @@
                     <li>内容は仕入れ状況により一部変更となる場合があります</li>
                 </ul>
 
-                <a href="#" class="block w-full max-w-[360px] bg-gold text-base-black font-serif font-bold py-4 px-6 rounded-[2px] text-center shadow-[0_4px_14px_rgba(201,168,76,0.15)] hover:bg-[#E8CE73] transition-colors duration-300">
+                <a href="#" onclick="openPortfolioModal(); return false;" class="block w-full max-w-[360px] bg-gold text-base-black font-serif font-bold py-4 px-6 rounded-[2px] text-center shadow-[0_4px_14px_rgba(201,168,76,0.15)] hover:bg-[#E8CE73] transition-colors duration-300">
                     本日分を予約する
                 </a>
             </div>
@@ -445,7 +445,7 @@
                 数量限定のため、予定数に達し次第受付終了となります。<br>
                 今ならまだ、ご案内できます。
             </p>
-            <a href="#cta-section" class="inline-flex items-center justify-center border border-gold bg-gold text-base-black font-serif px-8 py-4 tracking-[0.14em] hover:bg-[#E8CE73] transition-colors duration-300">
+            <a href="#" onclick="openPortfolioModal(); return false;" class="inline-flex items-center justify-center border border-gold bg-gold text-base-black font-serif px-8 py-4 tracking-[0.14em] hover:bg-[#E8CE73] transition-colors duration-300">
                 本日分を予約する
             </a>
         </div>
@@ -457,7 +457,7 @@
                 本日残り <span style="font-size: 24px;" class="font-bold">3</span> 食
             </p>
 
-            <a href="#cta-section" class="block w-full bg-[#c9a84c] text-base-black font-serif font-bold py-4 px-2 rounded-[2px] text-center shadow-[0_4px_14px_rgba(201,168,76,0.15)] hover:bg-[#E8CE73] transition-colors duration-300">
+            <a href="#" onclick="openPortfolioModal(); return false;" class="block w-full bg-[#c9a84c] text-base-black font-serif font-bold py-4 px-2 rounded-[2px] text-center shadow-[0_4px_14px_rgba(201,168,76,0.15)] hover:bg-[#E8CE73] transition-colors duration-300">
                 <span class="text-[16px] tracking-[0.08em]">本日分を予約する / ¥3,000</span>
             </a>
 
@@ -467,8 +467,43 @@
         </div>
     </div>
 
+    <div id="portfolio-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/80 px-6 backdrop-blur-sm">
+        <div class="w-full max-w-[380px] border border-gold/30 bg-[#111111] px-7 py-10 text-center shadow-2xl">
+            <p class="text-gold text-[11px] tracking-[0.22em] mb-5">PORTFOLIO NOTICE</p>
+            <h2 class="font-serif text-[24px] leading-[1.7] text-text-main mb-4">
+                これは<br>ポートフォリオです。
+            </h2>
+            <p class="text-[13px] leading-[2] tracking-[0.05em] text-[rgba(255,255,255,0.72)] mb-8">
+                実際の予約・購入はできません。<br>
+                LPデザインと構成提案のサンプルとして制作しています。
+            </p>
+            <button onclick="closePortfolioModal()" class="w-full bg-gold px-6 py-4 font-serif text-[14px] tracking-[0.14em] text-base-black transition-colors duration-300 hover:bg-[#E8CE73]">
+                閉じる
+            </button>
+        </div>
+    </div>
+
     <script>
+        function openPortfolioModal() {
+            const modal = document.getElementById("portfolio-modal");
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+        }
+
+        function closePortfolioModal() {
+            const modal = document.getElementById("portfolio-modal");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+        }
+
         document.addEventListener("DOMContentLoaded", function () {
+            const portfolioModal = document.getElementById("portfolio-modal");
+            portfolioModal.addEventListener("click", function (event) {
+                if (event.target === portfolioModal) {
+                    closePortfolioModal();
+                }
+            });
+
             const observerOptions = {
                 root: null,
                 rootMargin: "0px",
