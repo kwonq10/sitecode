@@ -1,526 +1,1220 @@
-<!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+﻿<!DOCTYPE html>
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#000000">
-    <meta name="description" content="一日限定、予約優先の特製蟹海鮮丼。旬の蟹を最も贅沢に味わう一杯を、売り切れ前にご予約ください。">
-    <title>極上蟹海鮮丼 | 一日限定・予約優先</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI鬧・虚縺ｮ鬮倬滓ｧ狗ｯ峨→SEO繝ｩ繧､繝・ぅ繝ｳ繧ｰ縺ｮ遏･隕九〒縲∵・譫懊↓縺薙□繧上ｋLP繧定ｨｭ險医・蛻ｶ菴懊ゆｸｭ隹ｷ蛛･荳縺ｮLP蛻ｶ菴懊し繝ｼ繝薙せ邏ｹ莉九・繝ｼ繧ｸ縺ｧ縺吶・>
+  <title>荳ｭ隹ｷ蛛･荳 | 謌先棡縺ｫ蟇・○繧記P蛻ｶ菴・/title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #081220;
+      --bg-soft: #11243c;
+      --surface: rgba(255, 255, 255, 0.08);
+      --surface-strong: rgba(255, 255, 255, 0.12);
+      --line: rgba(143, 226, 255, 0.18);
+      --text: #f8fbff;
+      --muted: rgba(248, 251, 255, 0.72);
+      --muted-strong: #d5e7f4;
+      --navy: #12375d;
+      --cyan: #6ee7ff;
+      --cyan-deep: #21b7df;
+      --coral: #ff845c;
+      --gold: #ffd591;
+      --paper: #f5f8fc;
+      --ink: #1f2c3a;
+      --ink-soft: #536476;
+      --card: #ffffff;
+      --shadow: 0 24px 60px rgba(4, 13, 24, 0.2);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 1160px;
+    }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        "base-black": "#0a0a0a",
-                        "ink-black": "#1C1C1C",
-                        "gold": "#c9a84c",
-                        "text-main": "#FFFFFF",
-                        "text-sub": "#f5f0e8",
-                        "text-fog": "#888888"
-                    },
-                    fontFamily: {
-                        serif: ['"Noto Serif JP"', "serif"],
-                        sans: ['"Noto Sans JP"', "sans-serif"]
-                    }
-                }
-            }
-        };
-    </script>
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
 
-    <style>
-        body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
-        }
+    body {
+      font-family: "Zen Kaku Gothic New", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.8;
+      letter-spacing: 0.03em;
+    }
 
-        .font-serif,
-        h1,
-        h2,
-        h3 {
-            font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
-        }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        .fade-in.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
 
-        .hero-section {
-            height: 100vh;
-            height: 100svh;
-            min-height: 680px;
-        }
+    .section {
+      padding: 112px 0;
+    }
 
-        .hero-bg-img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 40%;
-            z-index: 0;
-            opacity: 0.78;
-        }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--cyan-deep);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
 
-        .hero-section::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0.62) 0%,
-                rgba(0, 0, 0, 0.34) 42%,
-                rgba(0, 0, 0, 0.88) 100%
-            );
-            z-index: 1;
-        }
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.35;
+    }
 
-        details summary::-webkit-details-marker {
-            display: none;
-        }
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 52px;
+    }
 
-        @keyframes scrollDown {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100%); }
-        }
-    </style>
+    .section-heading h2 {
+      font-size: clamp(30px, 5vw, 50px);
+      line-height: 1.25;
+      letter-spacing: 0.04em;
+      font-weight: 900;
+      color: #10233a;
+    }
+
+    .section-heading p {
+      margin-top: 18px;
+      color: var(--ink-soft);
+      font-size: 16px;
+    }
+
+    .serif {
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.02em;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(8, 18, 32, 0.74);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .topbar-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      color: var(--text);
+    }
+
+    .brand small {
+      color: rgba(248, 251, 255, 0.6);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .brand strong {
+      font-size: 16px;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: rgba(248, 251, 255, 0.74);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .cta-chip,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .cta-chip {
+      min-height: 48px;
+      padding: 0 22px;
+      background: linear-gradient(135deg, var(--coral), #ff9d73);
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 14px 32px rgba(255, 132, 92, 0.22);
+    }
+
+    .cta-chip:hover,
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(110, 231, 255, 0.2), transparent 24%),
+        radial-gradient(circle at 82% 16%, rgba(255, 132, 92, 0.18), transparent 22%),
+        linear-gradient(160deg, #06101d 0%, #10243b 48%, #183a5c 100%);
+      color: var(--text);
+      padding: 82px 0 96px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at center, black 42%, transparent 88%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 420px);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .hero-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .hero-badge {
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--muted-strong);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(40px, 7vw, 74px);
+      line-height: 1.02;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .hero-copy h1 span {
+      display: block;
+    }
+
+    .hero-copy p {
+      max-width: 660px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 34px 0;
+    }
+
+    .hero-proof-card {
+      padding: 18px 18px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-proof-card small {
+      display: block;
+      color: rgba(248, 251, 255, 0.58);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .hero-proof-card strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--gold);
+    }
+
+    .hero-proof-card span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .button {
+      min-height: 58px;
+      padding: 0 28px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, var(--coral), #ff9d73);
+      color: white;
+      box-shadow: 0 16px 38px rgba(255, 132, 92, 0.24);
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .hero-note {
+      color: rgba(248, 251, 255, 0.62);
+      font-size: 12px;
+    }
+
+    .hero-panel {
+      position: relative;
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.24);
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border-radius: 22px;
+      border: 1px solid rgba(110, 231, 255, 0.16);
+      pointer-events: none;
+    }
+
+    .panel-label {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(110, 231, 255, 0.12);
+      color: var(--cyan);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .panel-title {
+      font-size: 28px;
+      line-height: 1.22;
+      margin-bottom: 18px;
+      color: white;
+    }
+
+    .panel-list {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .panel-item {
+      padding: 16px 18px;
+      border-radius: var(--radius-sm);
+      background: rgba(8, 18, 32, 0.34);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .panel-item strong {
+      display: block;
+      color: white;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    .panel-item span {
+      color: rgba(248, 251, 255, 0.68);
+      font-size: 13px;
+    }
+
+    .panel-foot {
+      padding: 18px 18px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .signal-band {
+      position: relative;
+      margin-top: -24px;
+      z-index: 2;
+    }
+
+    .signal-band-inner {
+      padding: 22px 28px;
+      border-radius: 22px;
+      background: white;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.3fr repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      align-items: center;
+    }
+
+    .signal-band-lead strong {
+      display: block;
+      color: var(--navy);
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .signal-band-lead span,
+    .signal-cell span {
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
+
+    .signal-cell strong {
+      display: block;
+      color: #0d2742;
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .problem-grid,
+    .service-grid,
+    .reason-grid,
+    .portfolio-grid,
+    .flow-grid,
+    .faq-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .problem-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .problem-card,
+    .service-card,
+    .reason-card,
+    .portfolio-card,
+    .flow-card,
+    .faq-item,
+    .profile-card,
+    .contact-card {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+    }
+
+    .problem-card {
+      padding: 28px;
+      border-top: 4px solid var(--coral);
+    }
+
+    .problem-card strong,
+    .service-card h3,
+    .reason-card h3,
+    .portfolio-card h3,
+    .flow-card h3,
+    .faq-item summary,
+    .profile-card h3,
+    .contact-card h3 {
+      color: #0f2842;
+    }
+
+    .problem-card strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .problem-card p,
+    .service-card p,
+    .reason-card p,
+    .portfolio-card p,
+    .flow-card p,
+    .profile-card p,
+    .contact-card p {
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .service-grid,
+    .reason-grid,
+    .flow-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .service-card,
+    .reason-card,
+    .flow-card {
+      padding: 30px 28px;
+    }
+
+    .service-index,
+    .reason-index,
+    .flow-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan-deep), var(--navy));
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      box-shadow: 0 14px 24px rgba(18, 55, 93, 0.18);
+    }
+
+    .service-card h3,
+    .reason-card h3,
+    .flow-card h3 {
+      margin-bottom: 12px;
+      font-size: 20px;
+      line-height: 1.45;
+    }
+
+    .service-list,
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .service-list li,
+    .contact-list li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .service-list li::before,
+    .contact-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--coral), var(--gold));
+    }
+
+    .portfolio {
+      background: linear-gradient(180deg, #eef5fb 0%, #f7fbff 100%);
+    }
+
+    .portfolio-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-banner {
+      display: block;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #dfe7ef;
+    }
+
+    .portfolio-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .portfolio-card:hover .portfolio-banner img {
+      transform: scale(1.03);
+    }
+
+    .portfolio-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .portfolio-body ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .portfolio-body li {
+      padding-left: 18px;
+      position: relative;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .portfolio-body li::before {
+      content: ">";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--cyan-deep);
+      font-weight: 700;
+    }
+
+    .portfolio-link {
+      margin-top: 24px;
+      width: 100%;
+    }
+
+    .profile-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 380px);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .profile-card {
+      padding: 34px;
+    }
+
+    .profile-name {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--cyan-deep);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .profile-card h3 {
+      font-size: 34px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .profile-stats {
+      display: grid;
+      gap: 14px;
+    }
+
+    .profile-stat {
+      padding: 22px 24px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #10243b 0%, #16375a 100%);
+      color: white;
+    }
+
+    .profile-stat small {
+      display: block;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .profile-stat strong {
+      display: block;
+      font-size: 32px;
+      line-height: 1;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .faq-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .faq-item {
+      padding: 24px 26px;
+    }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item p {
+      margin-top: 14px;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .contact {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 18%, rgba(110, 231, 255, 0.16), transparent 25%),
+        radial-gradient(circle at 82% 68%, rgba(255, 132, 92, 0.16), transparent 20%),
+        linear-gradient(140deg, #081220 0%, #122741 100%);
+      color: white;
+    }
+
+    .contact .section-heading h2,
+    .contact .section-heading p {
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 360px);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .contact-card {
+      padding: 32px;
+      background: rgba(255, 255, 255, 0.09);
+      box-shadow: none;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+    }
+
+    .contact-card h3,
+    .contact-card p,
+    .contact-list li {
+      color: white;
+    }
+
+    .contact-card p,
+    .contact-list li {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .contact-panel {
+      padding: 30px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .contact-panel strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .contact-panel p {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .contact-panel .button {
+      width: 100%;
+    }
+
+    .contact-foot {
+      margin-top: 16px;
+      color: rgba(255,255,255,0.62);
+      font-size: 12px;
+    }
+
+    footer {
+      background: #06101b;
+      color: rgba(255, 255, 255, 0.52);
+      text-align: center;
+      padding: 26px 20px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-inner,
+      .profile-wrap,
+      .contact-grid,
+      .signal-band-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .reason-grid,
+      .flow-grid,
+      .problem-grid,
+      .portfolio-grid,
+      .faq-grid,
+      .hero-proof {
+        grid-template-columns: 1fr;
+      }
+
+      .signal-band {
+        margin-top: 0;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .section {
+        padding: 84px 0;
+      }
+
+      .topbar-inner {
+        min-height: 64px;
+      }
+
+      .nav a:not(.cta-chip) {
+        display: none;
+      }
+
+      .hero {
+        padding: 56px 0 72px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(34px, 12vw, 54px);
+      }
+
+      .hero-panel,
+      .signal-band-inner,
+      .problem-card,
+      .service-card,
+      .reason-card,
+      .portfolio-body,
+      .flow-card,
+      .profile-card,
+      .contact-card,
+      .contact-panel {
+        padding: 24px;
+      }
+
+      .button,
+      .cta-chip {
+        width: 100%;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+    }
+  </style>
 </head>
-<body class="bg-base-black text-text-sub font-sans antialiased">
-    <header class="hero-section relative w-full flex flex-col justify-center items-center overflow-hidden">
-        <img src="images/hero.jpg" alt="旬の蟹海鮮丼" class="hero-bg-img">
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top">
+        <small>Landing Page Production</small>
+        <strong>荳ｭ隹ｷ蛛･荳 / LP蛻ｶ菴・/strong>
+      </a>
+      <nav class="nav">
+        <a href="#service">謾ｯ謠ｴ蜀・ｮｹ</a>
+        <a href="#reason">驕ｸ縺ｰ繧後ｋ逅・罰</a>
+        <a href="#contact" class="cta-chip">辟｡譁呵ｨｺ譁ｭ繧堤嶌隲・☆繧・/a>
+      </nav>
+    </div>
+  </header>
 
-        <div class="relative z-[3] w-full max-w-[760px] mx-auto px-6 text-center flex flex-col items-center">
-            <div class="inline-flex flex-wrap justify-center items-center gap-x-3 gap-y-2 mb-6 rounded-full border border-gold/40 bg-base-black/55 px-4 py-2 text-[11px] tracking-[0.16em] text-gold backdrop-blur-sm">
-                <span>数量限定</span>
-                <span class="h-1 w-1 rounded-full bg-gold"></span>
-                <span>予約優先</span>
-                <span class="h-1 w-1 rounded-full bg-gold"></span>
-                <span>本日残り3食</span>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="hero-badge-row">
+            <span class="hero-badge">AI鬧・虚縺ｧ鬮倬滓ｧ狗ｯ・/span>
+            <span class="hero-badge">SEO繝ｩ繧､繝・ぅ繝ｳ繧ｰ遏･隕・/span>
+            <span class="hero-badge">蛟倶ｺｺ縺ｧ繧よ怙蠕後∪縺ｧ莨ｴ襍ｰ</span>
+          </div>
+          <h1 class="serif">
+            <span>螢ｲ繧九◆繧√・謨ｴ逅・ｒ縲・/span>
+            <span>鄒弱＠縺上・/span>
+            <span>騾溘￥縲・/span>
+          </h1>
+          <p>
+            LP縺ｯ隕九◆逶ｮ縺縺代〒縺ｯ蜍輔″縺ｾ縺帙ｓ縲りｪｰ縺ｫ縲∽ｽ輔ｒ縲√←繧薙↑鬆・分縺ｧ螻翫￠繧九°縺ｾ縺ｧ謨ｴ逅・＠縺ｦ縺ｯ縺倥ａ縺ｦ謌先棡縺ｫ霑代▼縺阪∪縺吶・            荳ｭ隹ｷ蛛･荳縺ｯ縲、I縺ｫ繧医ｋ鬮倬溷ｮ溯｣・→讒区・險ｭ險医・荳｡霈ｪ縺ｧ縲∽ｺ区･ｭ縺ｮ蠑ｷ縺ｿ縺御ｼ昴ｏ繧記P繧偵▽縺上ｊ縺ｾ縺吶・          </p>
+
+          <div class="hero-proof">
+            <div class="hero-proof-card">
+              <small>Cloudworks</small>
+              <strong>92%</strong>
+              <span>繝励Ο繧ｸ繧ｧ繧ｯ繝亥ｮ御ｺ・紫</span>
             </div>
-
-            <h1 class="font-serif text-text-main flex flex-col gap-3 md:gap-5 mb-6">
-                <span class="text-[30px] sm:text-[42px] md:text-[56px] tracking-[0.1em] font-bold leading-tight" style="text-shadow: 0 2px 20px rgba(0,0,0,0.85), 0 1px 4px rgba(0,0,0,0.95);">
-                    一日限定。
-                </span>
-                <span class="text-[24px] sm:text-[34px] md:text-[46px] tracking-[0.05em] leading-[1.45] font-semibold" style="text-shadow: 0 2px 20px rgba(0,0,0,0.85), 0 1px 4px rgba(0,0,0,0.95);">
-                    旬の蟹を贅沢に味わう<br>特製海鮮丼。
-                </span>
-            </h1>
-
-            <p class="max-w-[620px] text-[13px] md:text-[16px] leading-[1.95] tracking-[0.06em] text-text-sub mb-6" style="text-shadow: 0 1px 12px rgba(0,0,0,0.85);">
-                注文ごとに仕上げる、<br class="sm:hidden">予約優先の特製蟹海鮮丼。<br>
-                今日だけの贅沢を、<br class="sm:hidden">売り切れ前に。
-            </p>
-
-            <div class="w-full max-w-[430px] rounded-sm border border-gold/30 bg-base-black/50 px-5 py-6 backdrop-blur-sm">
-                <div class="grid grid-cols-3 gap-2 mb-4 text-center">
-                    <div class="border border-gold/15 px-2 py-4">
-                        <p class="text-[10px] tracking-[0.14em] text-[rgba(255,255,255,0.55)] mb-1">PRICE</p>
-                        <p class="font-serif text-[26px] text-text-main leading-none">¥3,000</p>
-                    </div>
-                    <div class="border border-gold/15 px-2 py-4">
-                        <p class="text-[10px] tracking-[0.14em] text-[rgba(255,255,255,0.55)] mb-1">LIMIT</p>
-                        <p class="font-serif text-[28px] text-gold leading-none font-bold">3食</p>
-                    </div>
-                    <div class="border border-gold/15 px-2 py-4">
-                        <p class="text-[10px] tracking-[0.14em] text-[rgba(255,255,255,0.55)] mb-1">STYLE</p>
-                        <p class="text-[12px] leading-[1.5] text-text-main">予約優先<br>店頭受け取り</p>
-                    </div>
-                </div>
-                <a href="#" onclick="openPortfolioModal(); return false;" class="block w-full bg-gold text-base-black font-serif py-4 px-6 rounded-sm text-[15px] tracking-[0.12em] hover:bg-[#E8CE73] transition-colors duration-300">
-                    本日分を予約する
-                </a>
-                <p class="mt-4 text-[11px] tracking-[0.12em] text-[rgba(255,255,255,0.6)]">
-                    売り切れ次第終了 / 受け取り時間は予約時にご案内 / 当日分の確保は事前予約が確実です
-                </p>
+            <div class="hero-proof-card">
+              <small>Approval</small>
+              <strong>100%</strong>
+              <span>謇ｿ隱咲紫繝吶・繧ｹ縺ｮ螳牙ｿ・─</span>
             </div>
+            <div class="hero-proof-card">
+              <small>Style</small>
+              <strong>Text + Design</strong>
+              <span>讒区・縺九ｉ螳溯｣・∪縺ｧ荳豌鈴夊ｲｫ</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">辟｡譁儉P險ｺ譁ｭ繧堤嶌隲・☆繧・/a>
+            <a class="button button-secondary" href="#portfolio">蟇ｾ蠢懊〒縺阪ｋLP縺ｮ蝙九ｒ隕九ｋ</a>
+          </div>
+          <p class="hero-note">Zoom繧・崕隧ｱ縺ｮ蠑ｷ蠑輔↑蝟ｶ讌ｭ縺ｯ陦後＞縺ｾ縺帙ｓ縲ゅ∪縺壹・隱ｲ鬘後ｄ逶ｮ逧・ｒ繝・く繧ｹ繝医〒蜈ｱ譛峨＞縺溘□縺丞ｽ｢縺ｧ螟ｧ荳亥､ｫ縺ｧ縺吶・/p>
         </div>
 
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-[3] flex flex-col items-center opacity-70">
-            <span class="text-xs tracking-widest mb-2 font-serif text-gold">Scroll</span>
-            <div class="w-[1px] h-12 bg-gold/50 relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-full bg-gold animate-[scrollDown_1.5s_ease-in-out_infinite]"></div>
+        <aside class="hero-panel">
+          <span class="panel-label">What You Get</span>
+          <h2 class="panel-title serif">逶ｸ隲・燕縺ｫ謨ｴ逅・〒縺阪※縺・↑縺上※繧ゅ∝燕縺ｫ騾ｲ繧√∪縺吶・/h2>
+          <div class="panel-list">
+            <div class="panel-item">
+              <strong>讒区・縺後⊂繧薙ｄ繧翫〒繧ょｯｾ蠢・/strong>
+              <span>隱ｲ鬘後∝膚蜩√∫炊諠ｳ鬘ｧ螳｢繧偵ヲ繧｢繝ｪ繝ｳ繧ｰ縺励↑縺後ｉ險ｴ豎りｻｸ繧呈紛縺医∪縺吶・/span>
             </div>
-        </div>
-    </header>
-
-    <section class="bg-base-black pt-[60px] pb-[80px] px-6 relative z-10">
-        <div class="max-w-[720px] mx-auto fade-in">
-            <h2 class="font-serif text-[28px] md:text-[34px] text-gold text-center mb-10 tracking-[0.1em] leading-relaxed">
-                ただ満たすだけの<br>一杯では、<br>物足りない方へ。
-            </h2>
-            <div class="space-y-8 text-[14px] leading-[2.1] tracking-[0.06em] text-[rgba(255,255,255,0.78)]">
-                <p>
-                    せっかく選ぶなら、記憶に残る一杯を食べたい。
-                    量だけでも、映えだけでもない。
-                    口に入れた瞬間の満足感まで含めて、<span class="text-[#c9a84c] font-medium">また食べたいと思える体験</span>を目指しました。
-                </p>
-                <p>
-                    主役は、しっかり存在感のある蟹。
-                    そこに鮮魚の華やかさと、食べ進めても濃度が落ちない設計を重ねています。
-                    <span class="text-[#c9a84c] font-medium">今日は少し良いものを食べたい日</span>に、迷わず選べる一杯です。
-                </p>
-                <p>
-                    数に限りがあるからこそ、仕上がりに妥協しない。
-                    その一杯を確実に味わっていただくための、予約優先販売です。
-                </p>
+            <div class="panel-item">
+              <strong>螳溯｣・□縺代〒邨ゅｏ繧峨↑縺・/strong>
+              <span>隕句・縺励・・分縲，TA驟咲ｽｮ縺ｾ縺ｧ謌先棡縺ｫ蟇・○縺溯ｨｭ險医〒邨・∩遶九※縺ｾ縺吶・/span>
             </div>
-        </div>
+            <div class="panel-item">
+              <strong>AI繧剃ｽｿ縺・′縲・尅縺ｫ縺ｯ菴懊ｉ縺ｪ縺・/strong>
+              <span>鬮倬溷喧縺ｮ縺溘ａ縺ｫAI繧剃ｽｿ縺・∽ｺｺ縺悟愛譁ｭ縺吶∋縺崎ｨｴ豎ゅｄ莉穂ｸ翫￡縺ｯ荳∝ｯｧ縺ｫ隧ｰ繧√∪縺吶・/span>
+            </div>
+          </div>
+          <div class="panel-foot">蛻ｶ菴應ｼ夂､ｾ縺ｮ繧医≧縺ｪ蛻・･ｭ縺ｧ縺ｯ縺ｪ縺上∬ｨｭ險域э蝗ｳ縺碁壹▲縺溘∪縺ｾ譛蠕後∪縺ｧ莉穂ｸ翫′繧九・縺悟倶ｺｺ蟇ｾ蠢懊・蠑ｷ縺ｿ縺ｧ縺吶・/div>
+        </aside>
+      </div>
     </section>
 
-    <section class="bg-ink-black py-[60px] px-6 relative z-10 border-y border-gold/10">
-        <div class="max-w-[840px] mx-auto fade-in">
-            <div class="border border-gold/30 p-8 md:p-10 relative">
-                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-ink-black px-4 font-serif text-gold text-sm tracking-[0.18em] whitespace-nowrap">
-                    選ばれる理由
-                </div>
-
-                <div class="text-center mb-12 mt-4">
-                    <h2 class="font-serif text-[24px] md:text-[30px] font-medium text-text-main tracking-[0.08em] mb-4">
-                        高そう、ではなく<br><span class="text-[#c9a84c]">高くても食べたい</span><br>一杯へ。
-                    </h2>
-                    <p class="text-[14px] leading-[2] text-[rgba(255,255,255,0.75)] tracking-[0.06em] max-w-[620px] mx-auto">
-                        素材の印象だけで終わらせず、食べ始めから食べ終わりまで満足度が続くように設計。
-                        見た目の豪華さと、口に入れた瞬間の納得感を両立させています。
-                    </p>
-                </div>
-
-                <div class="grid gap-6 md:grid-cols-3 text-center">
-                    <div class="border border-gold/15 px-5 py-6">
-                        <p class="font-serif text-gold text-[20px] tracking-[0.12em] mb-3">蟹の存在感</p>
-                        <p class="text-[13px] leading-[1.95] text-[rgba(255,255,255,0.74)]">
-                            主役としてしっかり感じる量感と旨み。ひと口目から満足感が立ち上がります。
-                        </p>
-                    </div>
-                    <div class="border border-gold/15 px-5 py-6">
-                        <p class="font-serif text-gold text-[20px] tracking-[0.12em] mb-3">注文ごとに仕上げ</p>
-                        <p class="text-[13px] leading-[1.95] text-[rgba(255,255,255,0.74)]">
-                            香り、温度、食感が整う<br class="sm:hidden">良いタイミングで渡すための<br class="sm:hidden">予約優先販売です。
-                        </p>
-                    </div>
-                    <div class="border border-gold/15 px-5 py-6">
-                        <p class="font-serif text-gold text-[20px] tracking-[0.12em] mb-3">最後まで濃い満足</p>
-                        <p class="text-[13px] leading-[1.95] text-[rgba(255,255,255,0.74)]">
-                            食べ終わるまで<br class="sm:hidden">期待が落ちない構成で、<br class="sm:hidden">満足感が続きます。
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <div class="signal-band">
+      <div class="container signal-band-inner">
+        <div class="signal-band-lead">
+          <strong class="serif">縺薙・LP閾ｪ菴薙′縲∵署譯亥刀雉ｪ縺ｮ繧ｵ繝ｳ繝励Ν縺ｧ縺吶・/strong>
+          <span>騾溘＆縺縺代〒縺ｪ縺上∬ｨ闡峨・謨ｴ逅・→隕也ｷ壼ｰ守ｷ壹∪縺ｧ蜷ｫ繧√※險ｭ險医＠縺ｦ縺・∪縺吶・/span>
         </div>
-    </section>
-
-    <section class="bg-base-black py-[60px] px-6 relative z-10">
-        <div class="max-w-[760px] mx-auto fade-in">
-            <div class="text-center mb-12">
-                <p class="text-gold text-[12px] tracking-[0.18em] mb-4">TRUST BY NUMBERS</p>
-                <h2 class="font-serif text-[28px] md:text-[34px] text-text-main tracking-[0.08em] leading-relaxed">
-                    数字が、<br>満足度を物語る。
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-2 gap-[24px] border-y border-gold/20 py-10 mb-6">
-                <div class="text-center">
-                    <p class="text-[14px] text-[rgba(255,255,255,0.75)] tracking-wider mb-2">リピート率</p>
-                    <p class="font-serif text-gold leading-none"><span class="text-[54px] md:text-[68px] font-bold">94.8</span><span class="text-xl md:text-2xl ml-1">%</span></p>
-                    <p class="text-[11px] text-[rgba(255,255,255,0.45)] mt-3">自社集計 / 過去販売分より算出</p>
-                </div>
-                <div class="text-center md:border-l border-gold/20">
-                    <p class="text-[14px] text-[rgba(255,255,255,0.75)] tracking-wider mb-2">累計販売数</p>
-                    <p class="font-serif text-gold leading-none"><span class="text-[54px] md:text-[68px] font-bold">50,000</span><span class="text-base md:text-lg ml-2">食突破</span></p>
-                    <p class="text-[11px] text-[rgba(255,255,255,0.45)] mt-3">期間累計 / 自社実績</p>
-                </div>
-            </div>
-
-            <p class="text-center text-[13px] leading-[2] text-[rgba(255,255,255,0.72)] tracking-[0.06em]">
-                味の好みは人それぞれでも、また食べたいという評価がこの一杯の価値です。
-            </p>
+        <div class="signal-cell">
+          <strong>AI</strong>
+          <span>讒狗ｯ蛾溷ｺｦ繧貞ｺ穂ｸ翫￡</span>
         </div>
-    </section>
-
-    <section class="bg-base-black py-[60px] relative z-10 overflow-hidden">
-        <div class="max-w-[720px] mx-auto px-6 fade-in">
-            <div class="relative w-full aspect-video mb-12 overflow-hidden rounded-sm shadow-2xl border border-gold/10">
-                <img src="images/donburi.jpg" alt="蟹海鮮丼の写真" class="absolute inset-0 w-full h-full object-cover" style="object-position: center 55%;">
-                <div class="absolute inset-0 flex items-center justify-center bg-base-black/35">
-                    <p class="font-serif text-[24px] md:text-[30px] text-text-main tracking-[0.14em] text-center leading-loose drop-shadow-md">
-                        一目で、<br>食べたくなる。
-                    </p>
-                </div>
-            </div>
-
-            <div class="text-[14px] leading-[2] tracking-[0.06em] text-center text-[rgba(255,255,255,0.75)] space-y-5">
-                <p>
-                    蓋を開けた瞬間の華やかさ。箸を入れた瞬間の期待感。
-                    そのどちらも裏切らないよう、見た目の迫力と食べたときの満足感を両立させました。
-                </p>
-                <p class="text-[11px] text-[rgba(255,255,255,0.45)]">
-                    写真は実際の提供イメージです。仕入れ状況により内容が一部変わる場合があります。
-                </p>
-            </div>
+        <div class="signal-cell">
+          <strong>SEO</strong>
+          <span>隱ｭ縺ｿ謇狗炊隗｣縺ｮ荳句慍縺ゅｊ</span>
         </div>
-    </section>
-
-    <section class="bg-ink-black py-[60px] px-6 relative z-10 border-y border-gold/10">
-        <div class="max-w-[760px] mx-auto fade-in">
-            <div class="text-center mb-12">
-                <p class="text-gold text-[12px] tracking-[0.18em] mb-4">WHY 3,000 YEN</p>
-                <h2 class="font-serif text-[28px] md:text-[34px] text-text-main tracking-[0.08em]">
-                    3,000円でも<br>選ばれる理由がある。
-                </h2>
-            </div>
-
-            <div class="grid gap-6 md:grid-cols-3 mb-8">
-                <div class="border border-gold/15 px-5 py-6">
-                    <p class="font-serif text-gold text-[18px] tracking-[0.12em] mb-3">素材</p>
-                    <p class="text-[13px] leading-[1.95] text-[rgba(255,255,255,0.74)]">
-                        蟹を主役として感じられるよう、<br class="sm:hidden">量感と華やかさを両立しています。
-                    </p>
-                </div>
-                <div class="border border-gold/15 px-5 py-6">
-                    <p class="font-serif text-gold text-[18px] tracking-[0.12em] mb-3">仕上げ</p>
-                    <p class="text-[13px] leading-[1.95] text-[rgba(255,255,255,0.74)]">
-                        注文ごとに整えることで、<br class="sm:hidden">香りと食感を良い状態へ導きます。
-                    </p>
-                </div>
-                <div class="border border-gold/15 px-5 py-6">
-                    <p class="font-serif text-gold text-[18px] tracking-[0.12em] mb-3">限定性</p>
-                    <p class="text-[13px] leading-[1.95] text-[rgba(255,255,255,0.74)]">
-                        数量を追わず、<br class="sm:hidden">一杯ごとの満足度を優先しています。
-                    </p>
-                </div>
-            </div>
-
-            <p class="text-center text-[14px] leading-[2] tracking-[0.06em] text-[rgba(255,255,255,0.76)] max-w-[680px] mx-auto">
-                価格だけを見れば安くはないかもしれません。
-                それでも選ばれるのは、素材・仕上げ・満足感のどれも妥協していないからです。
-                今日は少し良いものを食べたい日に、後悔させない一杯を目指しています。
-            </p>
+        <div class="signal-cell">
+          <strong>1莠ｺ蟇ｾ蠢・/strong>
+          <span>諢丞峙縺後・繧後★騾ｲ陦・/span>
         </div>
-    </section>
-
-    <section class="bg-base-black py-[60px] px-6 relative z-10">
-        <div class="max-w-[760px] mx-auto fade-in">
-            <div class="text-center mb-12">
-                <p class="text-gold text-[12px] tracking-[0.18em] mb-4">REVIEWS</p>
-                <h2 class="font-serif text-[28px] md:text-[34px] text-text-main tracking-[0.08em]">
-                    実際に食べた方の声
-                </h2>
-            </div>
-
-            <div class="grid gap-5 md:grid-cols-3">
-                <div class="border border-gold/15 bg-ink-black/30 px-5 py-6">
-                    <p class="text-[10px] tracking-[0.14em] text-gold mb-3">30代女性</p>
-                    <p class="text-[13px] leading-[2] text-[rgba(255,255,255,0.76)]">
-                        見た目の豪華さだけではなく、食べた瞬間にこれは違うと分かりました。価格以上の満足感でした。
-                    </p>
-                </div>
-                <div class="border border-gold/15 bg-ink-black/30 px-5 py-6">
-                    <p class="text-[10px] tracking-[0.14em] text-gold mb-3">40代男性</p>
-                    <p class="text-[13px] leading-[2] text-[rgba(255,255,255,0.76)]">
-                        蟹の存在感がしっかりあって、最後まで飽きずに食べられました。次も予約したいです。
-                    </p>
-                </div>
-                <div class="border border-gold/15 bg-ink-black/30 px-5 py-6">
-                    <p class="text-[10px] tracking-[0.14em] text-gold mb-3">20代女性</p>
-                    <p class="text-[13px] leading-[2] text-[rgba(255,255,255,0.76)]">
-                        ちょっと贅沢したい日にちょうどいい一杯。人にもすすめたくなるクオリティでした。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-base-black pt-[100px] pb-[60px] px-6 relative z-10" id="cta-section">
-        <div class="max-w-[760px] mx-auto fade-in">
-            <h2 class="font-serif text-[28px] md:text-[34px] text-text-main text-center tracking-[0.08em] mb-12">
-                今日の一杯を、<br>先に確保してください。
-            </h2>
-
-            <div class="border-y border-gold/40 pt-0 pb-12 px-4 md:px-12 flex flex-col items-center relative">
-                <div class="absolute top-0 left-0 w-2 h-2 border-t border-l border-gold" style="z-index:2;"></div>
-                <div class="absolute top-0 right-0 w-2 h-2 border-t border-r border-gold" style="z-index:2;"></div>
-                <div class="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-gold" style="z-index:2;"></div>
-                <div class="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-gold" style="z-index:2;"></div>
-
-                <h3 class="font-serif text-[26px] md:text-[32px] text-gold tracking-[0.08em] mb-6 mt-10 text-center leading-[1.6]">
-                    売り切れ前に、<br>今日の一杯を<br>確保してください。
-                </h3>
-
-                <img src="images/section-image.jpg" alt="蟹海鮮丼の盛り付け" class="mb-8 shadow-lg" style="width:100%;height:300px;object-fit:cover;object-position:center 20%;display:block;border-radius:4px;">
-
-                <div class="text-center mb-6">
-                    <p style="font-size: 13px; color: #c9a84c; letter-spacing: 0.08em;" class="leading-loose">
-                        数量限定のため、予定数に達し次第受付終了となります。<br>
-                        食べたいと思った今が、いちばん確実です。
-                    </p>
-                </div>
-
-                <p class="font-serif text-5xl text-text-main tracking-wider mb-6">
-                    ¥3,000 <span class="text-[14px] text-[rgba(255,255,255,0.75)] tracking-normal font-sans">(税込)</span>
-                </p>
-
-                <ul class="text-[14px] tracking-wide leading-[2] text-center text-[rgba(255,255,255,0.75)] mb-8 space-y-2">
-                    <li>店頭受け取り / 予約優先販売</li>
-                    <li>本日残り3食</li>
-                    <li>受け取り時間は予約時にご案内</li>
-                    <li>内容は仕入れ状況により一部変更となる場合があります</li>
-                </ul>
-
-                <a href="#" onclick="openPortfolioModal(); return false;" class="block w-full max-w-[360px] bg-gold text-base-black font-serif font-bold py-4 px-6 rounded-[2px] text-center shadow-[0_4px_14px_rgba(201,168,76,0.15)] hover:bg-[#E8CE73] transition-colors duration-300">
-                    本日分を予約する
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-base-black py-[60px] px-6 relative z-10">
-        <div class="max-w-[760px] mx-auto fade-in">
-            <div class="text-center mb-12">
-                <p class="text-gold text-[12px] tracking-[0.18em] mb-4">FAQ</p>
-                <h2 class="font-serif text-[28px] md:text-[34px] text-text-main tracking-[0.08em]">
-                    ご予約前によくある質問
-                </h2>
-            </div>
-
-            <div class="space-y-4">
-                <details class="border border-gold/15 px-5 py-4 group" open>
-                    <summary class="cursor-pointer list-none font-serif text-text-main tracking-[0.06em] flex items-center justify-between">
-                        当日予約は可能ですか
-                        <span class="text-gold group-open:rotate-45 transition-transform duration-300">＋</span>
-                    </summary>
-                    <p class="mt-4 text-[13px] leading-[2] text-[rgba(255,255,255,0.72)]">
-                        空きがある場合のみご案内可能です。確実にお受け取りいただくため、事前予約をおすすめしています。
-                    </p>
-                </details>
-                <details class="border border-gold/15 px-5 py-4 group" open>
-                    <summary class="cursor-pointer list-none font-serif text-text-main tracking-[0.06em] flex items-center justify-between">
-                        受け取り時間は選べますか
-                        <span class="text-gold group-open:rotate-45 transition-transform duration-300">＋</span>
-                    </summary>
-                    <p class="mt-4 text-[13px] leading-[2] text-[rgba(255,255,255,0.72)]">
-                        ご予約時にご希望時間を伺い、当日の状況に合わせてご案内します。
-                    </p>
-                </details>
-                <details class="border border-gold/15 px-5 py-4 group">
-                    <summary class="cursor-pointer list-none font-serif text-text-main tracking-[0.06em] flex items-center justify-between">
-                        キャンセルはできますか
-                        <span class="text-gold group-open:rotate-45 transition-transform duration-300">＋</span>
-                    </summary>
-                    <p class="mt-4 text-[13px] leading-[2] text-[rgba(255,255,255,0.72)]">
-                        仕込みの都合上、直前キャンセルはお受けできない場合があります。詳細は予約時にご案内します。
-                    </p>
-                </details>
-                <details class="border border-gold/15 px-5 py-4 group">
-                    <summary class="cursor-pointer list-none font-serif text-text-main tracking-[0.06em] flex items-center justify-between">
-                        アレルギーがある場合はどうすればいいですか
-                        <span class="text-gold group-open:rotate-45 transition-transform duration-300">＋</span>
-                    </summary>
-                    <p class="mt-4 text-[13px] leading-[2] text-[rgba(255,255,255,0.72)]">
-                        蟹や魚介を使用しています。気になる点があれば、予約前に必ずご相談ください。
-                    </p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-base-black py-[60px] pb-[160px] px-6 relative z-10">
-        <div class="max-w-[640px] mx-auto text-center fade-in">
-            <p class="font-serif text-xl md:text-2xl tracking-[0.12em] leading-loose mb-6 text-text-main">
-                迷う前に、<br>今日の一杯を確保してください。
-            </p>
-            <p class="text-[14px] tracking-[0.1em] text-gold mb-8 leading-[2]">
-                数量限定のため、予定数に達し次第受付終了となります。<br>
-                今ならまだ、ご案内できます。
-            </p>
-            <a href="#" onclick="openPortfolioModal(); return false;" class="inline-flex items-center justify-center border border-gold bg-gold text-base-black font-serif px-8 py-4 tracking-[0.14em] hover:bg-[#E8CE73] transition-colors duration-300">
-                本日分を予約する
-            </a>
-        </div>
-    </section>
-
-    <div class="fixed bottom-0 left-0 w-full z-50 pointer-events-none">
-        <div class="max-w-[640px] mx-auto bg-base-black/95 backdrop-blur-md border-t border-gold/30 p-4 pb-6 pointer-events-auto flex flex-col items-center">
-            <p style="color: #c9a84c; font-size: 13px; letter-spacing: 0.1em;" class="mb-3 font-serif">
-                本日残り <span style="font-size: 24px;" class="font-bold">3</span> 食
-            </p>
-
-            <a href="#" onclick="openPortfolioModal(); return false;" class="block w-full bg-[#c9a84c] text-base-black font-serif font-bold py-4 px-2 rounded-[2px] text-center shadow-[0_4px_14px_rgba(201,168,76,0.15)] hover:bg-[#E8CE73] transition-colors duration-300">
-                <span class="text-[16px] tracking-[0.08em]">本日分を予約する / ¥3,000</span>
-            </a>
-
-            <p style="font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 12px;" class="text-center tracking-wider">
-                店頭受け取り / 売り切れ次第終了 / 予約優先販売
-            </p>
-        </div>
+      </div>
     </div>
 
-    <div id="portfolio-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/80 px-6 backdrop-blur-sm">
-        <div class="w-full max-w-[380px] border border-gold/30 bg-[#111111] px-7 py-10 text-center shadow-2xl">
-            <p class="text-gold text-[11px] tracking-[0.22em] mb-5">PORTFOLIO NOTICE</p>
-            <h2 class="font-serif text-[24px] leading-[1.7] text-text-main mb-4">
-                これは<br>ポートフォリオです。
-            </h2>
-            <p class="text-[13px] leading-[2] tracking-[0.05em] text-[rgba(255,255,255,0.72)] mb-8">
-                実際の予約・購入はできません。<br>
-                LPデザインと構成提案のサンプルとして制作しています。
-            </p>
-            <button onclick="closePortfolioModal()" class="w-full bg-gold px-6 py-4 font-serif text-[14px] tracking-[0.14em] text-base-black transition-colors duration-300 hover:bg-[#E8CE73]">
-                閉じる
-            </button>
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Problem</span>
+          <h2>縺薙ｓ縺ｪ迥ｶ諷九↑繧峨´P繧剃ｽ懊ｋ諢丞袖縺後≠繧翫∪縺吶・/h2>
+          <p>縲後→繧翫≠縺医★繝壹・繧ｸ縺悟ｿ・ｦ√阪〒縺ｯ縺ｪ縺上√後・繝ｼ繧ｸ繧剃ｽｿ縺｣縺ｦ菴輔ｒ螟峨∴縺溘＞縺九阪′隕九∴縺ｦ縺・ｋ縺ｻ縺ｩ縲´P縺ｯ蠑ｷ縺上↑繧翫∪縺吶・/p>
         </div>
-    </div>
+        <div class="problem-grid">
+          <article class="problem-card">
+            <strong>繝・じ繧､繝ｳ縺ｯ謨ｴ縺｣縺ｦ縺・ｋ縺ｮ縺ｫ縲∝撫縺・粋繧上○縺ｫ縺､縺ｪ縺後ｉ縺ｪ縺・/strong>
+            <p>隕九◆逶ｮ縺ｮ謨ｴ鬆薙□縺代〒縺ｯ縺ｪ縺上∬ｪｭ縺ｿ謇九・荳榊ｮ峨ｒ鬆・分縺ｫ縺ｻ縺ｩ縺乗ｧ区・縺悟ｿ・ｦ√〒縺吶・/p>
+          </article>
+          <article class="problem-card">
+            <strong>蛻ｶ菴應ｼ夂､ｾ縺ｫ鬆ｼ繧縺ｻ縺ｩ縺ｧ縺ｯ縺ｪ縺・′縲・尅縺ｫ菴懊▲縺ｦ螟ｱ謨励＠縺溘￥縺ｪ縺・/strong>
+            <p>蟆丞屓繧翫・蛻ｩ縺丞倶ｺｺ蟇ｾ蠢懊〒縲∝愛譁ｭ縺ｮ譌ｩ縺輔→蜩∬ｳｪ縺ｮ繝舌Λ繝ｳ繧ｹ繧貞叙繧翫◆縺・こ繝ｼ繧ｹ縺ｫ蜷代＞縺ｦ縺・∪縺吶・/p>
+          </article>
+          <article class="problem-card">
+            <strong>諠・ｱ縺梧淵繧峨・縺｣縺ｦ縺・※縲∽ｽ輔ｒ謇薙■蜃ｺ縺吶∋縺阪°閾ｪ蛻・〒繧よ紛逅・＠縺阪ｌ縺ｪ縺・/strong>
+            <p>繝偵い繝ｪ繝ｳ繧ｰ繧帝壹＠縺ｦ縲∬ｪｰ縺ｫ菴輔ｒ螻翫￠繧記P縺九ｒ荳邱偵↓險隱槫喧縺励※縺・″縺ｾ縺吶・/p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <script>
-        function openPortfolioModal() {
-            const modal = document.getElementById("portfolio-modal");
-            modal.classList.remove("hidden");
-            modal.classList.add("flex");
-        }
+    <section class="section" id="service">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Service</span>
+          <h2>蛻ｶ菴懊□縺代〒縺ｪ縺上∵・譫懊↓霑代▼縺上◆繧√・譚先侭縺ｾ縺ｧ謨ｴ縺医∪縺吶・/h2>
+          <p>蜊倥↓HTML繧堤ｵ・・縺ｮ縺ｧ縺ｯ縺ｪ縺上∬ｨｴ豎よ紛逅・°繧韻TA險ｭ險医∪縺ｧ蜷ｫ繧√※LP蜈ｨ菴薙ｒ莉慕ｫ九※縺ｾ縺吶・/p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-index">01</div>
+            <h3>讒区・險ｭ險医→險ｴ豎よ紛逅・/h3>
+            <p>蠑ｷ縺ｿ縲・｡ｧ螳｢蜒上∵ｯ碑ｼ・ｯｾ雎｡縲∽ｸ榊ｮ芽ｦ∫ｴ繧呈紛逅・＠縺ｦ縲√←縺薙〒菴輔ｒ莨昴∴繧九∋縺阪°繧定ｨｭ險医＠縺ｾ縺吶・/p>
+            <ul class="service-list">
+              <li>繝輔ぃ繝ｼ繧ｹ繝医ン繝･繝ｼ縺ｮ險縺・・繧頑紛逅・/li>
+              <li>隕句・縺鈴・ｺ上→CTA蟆守ｷ壹・險ｭ險・/li>
+              <li>遶ｶ蜷医→蟾ｮ蛻･蛹悶☆繧九◆繧√・險隱槫喧</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="service-index">02</div>
+            <h3>AI豢ｻ逕ｨ縺ｫ繧医ｋ鬮倬溷ｮ溯｣・/h3>
+            <p>逕滓・AI繧定｣懷勧霈ｪ縺ｨ縺励※菴ｿ縺・∝・騾溘ｒ荳翫￡縺ｪ縺後ｉ繧ゅ∵怙邨ら噪縺ｪ繝医・繝ｳ繧・ｯ・ｺｦ縺ｯ莠ｺ縺ｮ逶ｮ縺ｧ隧ｰ繧√∪縺吶・/p>
+            <ul class="service-list">
+              <li>遏ｭ邏肴悄縺ｧ繧らｴ邯ｻ縺励↓縺上＞蛻ｶ菴懊ヵ繝ｭ繝ｼ</li>
+              <li>繧ｳ繝斐・縺ｨ繝・じ繧､繝ｳ縺ｮ蠕蠕ｩ縺碁溘＞</li>
+              <li>蠢・ｦ√↓蠢懊§縺ｦ謾ｹ蝟・燕謠舌・縺溘◆縺榊床繧よ署遉ｺ</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="service-index">03</div>
+            <h3>蜈ｬ髢句ｾ後ｒ隕区紺縺医◆莉穂ｸ翫￡</h3>
+            <p>隱ｭ縺ｿ繧・☆縺輔√せ繝槭・陦ｨ遉ｺ縲，TA莉倩ｿ代・蠢・炊髫懷｣√↑縺ｩ縲∝ｮ滄圀縺ｮ髮｢閼ｱ繝昴う繝ｳ繝医ｒ諢剰ｭ倥＠縺ｦ謨ｴ縺医∪縺吶・/p>
+            <ul class="service-list">
+              <li>繝｢繝舌う繝ｫ繝輔ぃ繝ｼ繧ｹ繝医・陦ｨ遉ｺ隱ｿ謨ｴ</li>
+              <li>FAQ繧・｣懆ｶｳ蟆守ｷ壹・霑ｽ蜉</li>
+              <li>蠕後°繧牙ｷｮ縺玲崛縺医ｄ縺吶＞讒矩縺ｧ螳溯｣・/li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        function closePortfolioModal() {
-            const modal = document.getElementById("portfolio-modal");
-            modal.classList.add("hidden");
-            modal.classList.remove("flex");
-        }
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Flow</span>
+          <h2>騾ｲ繧∵婿縺後す繝ｳ繝励Ν縺縺九ｉ縲∽ｾ晞ｼ縺励ｄ縺吶＞縲・/h2>
+          <p>譛蛻昴°繧牙・縺ｦ豎ｺ縺ｾ縺｣縺ｦ縺・↑縺上※繧ょ､ｧ荳亥､ｫ縺ｧ縺吶ゅ∪縺壹・莠区･ｭ縺ｮ迴ｾ迥ｶ縺ｨ逶ｮ逧・°繧峨せ繧ｿ繝ｼ繝医〒縺阪∪縺吶・/p>
+        </div>
+        <div class="flow-grid">
+          <article class="flow-card">
+            <div class="flow-index">01</div>
+            <h3>隱ｲ鬘後・蜈ｱ譛・/h3>
+            <p>迴ｾ迥ｶ縺ｮ謔ｩ縺ｿ縲∝膚蜩∫音諤ｧ縲・寔螳｢迥ｶ豕√∫炊諠ｳ縺ｮ逹蝨ｰ轤ｹ繧偵ユ繧ｭ繧ｹ繝医・繝ｼ繧ｹ縺ｧ遒ｺ隱阪＠縺ｾ縺吶・/p>
+          </article>
+          <article class="flow-card">
+            <div class="flow-index">02</div>
+            <h3>讒区・縺ｮ謠先｡・/h3>
+            <p>隱ｰ縺ｫ縺ｩ縺・絢縺吶°繧呈紛逅・＠縲√ヵ繧｡繝ｼ繧ｹ繝医ン繝･繝ｼ縺九ｉCTA縺ｾ縺ｧ縺ｮ鬪ｨ譬ｼ繧呈署譯医＠縺ｾ縺吶・/p>
+          </article>
+          <article class="flow-card">
+            <div class="flow-index">03</div>
+            <h3>蛻ｶ菴懊→隱ｿ謨ｴ</h3>
+            <p>繝・じ繧､繝ｳ縺ｨ螳溯｣・ｒ縺ｾ縺ｨ繧√※騾ｲ陦後＠縲∝ｿ・ｦ√↓蠢懊§縺ｦ譁・ｨ繧・・ｺ上ｒ荳邱偵↓蠕ｮ隱ｿ謨ｴ縺励∪縺吶・/p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const portfolioModal = document.getElementById("portfolio-modal");
-            portfolioModal.addEventListener("click", function (event) {
-                if (event.target === portfolioModal) {
-                    closePortfolioModal();
-                }
-            });
+    <section class="section" id="reason">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Reason</span>
+          <h2>驕ｸ縺ｰ繧後ｋ逅・罰縺ｯ縲・溘＆繧医ｊ繧ゅ梧э蝗ｳ縺碁壹ｋ縺薙→縲阪〒縺吶・/h2>
+          <p>蛻ｶ菴懊・騾比ｸｭ縺ｧ諢丞峙縺後％縺ｼ繧瑚誠縺｡繧九→縲∬ｦ九◆逶ｮ縺ｯ謨ｴ縺｣縺ｦ繧ょ｣ｲ繧後↓縺上＞LP縺ｫ縺ｪ繧翫∪縺吶ゅ◎縺薙ｒ蟠ｩ縺輔↑縺・ｲ繧∵婿繧貞､ｧ莠九↓縺励※縺・∪縺吶・/p>
+        </div>
+        <div class="reason-grid">
+          <article class="reason-card">
+            <div class="reason-index">A</div>
+            <h3>繧ｳ繝斐・縺ｨ繝・じ繧､繝ｳ繧貞・縺代☆縺弱↑縺・/h3>
+            <p>險闡峨→隕九◆逶ｮ繧貞挨縲・↓菴懊ｋ縺ｨ縲∬ｨｴ豎ゅ・闃ｯ縺後★繧後ｄ縺吶￥縺ｪ繧翫∪縺吶よ怙蛻昴°繧我ｸ縺､縺ｮ譁・ц縺ｧ莉穂ｸ翫￡縺ｾ縺吶・/p>
+          </article>
+          <article class="reason-card">
+            <div class="reason-index">B</div>
+            <h3>AI繧剃ｽｿ縺・炊逕ｱ縺梧・遒ｺ</h3>
+            <p>AI縺ｯ驥冗肇縺ｮ縺溘ａ縺ｧ縺ｯ縺ｪ縺上∝・蜍輔ｒ騾溘ａ縺ｦ讀懆ｨ取凾髢薙ｒ蠅励ｄ縺吶◆繧√↓菴ｿ縺・∪縺吶る溘＞縺ｮ縺ｫ阮・￥縺ｪ繧翫↓縺上＞騾ｲ繧∵婿縺ｧ縺吶・/p>
+          </article>
+          <article class="reason-card">
+            <div class="reason-index">C</div>
+            <h3>蛟倶ｺｺ縺縺九ｉ逶ｸ隲・′隧ｰ縺ｾ繧翫↓縺上＞</h3>
+            <p>縲瑚ｪｰ縺ｫ遒ｺ隱阪☆繧後・縺・＞縺句・縺九ｉ縺ｪ縺・阪′襍ｷ縺阪↓縺上￥縲∬ｨｴ豎ょ､画峩繧・ｦ九○譁ｹ縺ｮ菫ｮ豁｣繧りｻｽ繧・°縺ｫ蝗槭○縺ｾ縺吶・/p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-            const observerOptions = {
-                root: null,
-                rootMargin: "0px",
-                threshold: 0.15
-            };
+    <section class="section portfolio" id="portfolio">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Portfolio Type</span>
+          <h2>螳溽ｸｾURL縺ｮ蛟句挨蜈ｱ譛峨′髮｣縺励＞譯井ｻｶ縺ｧ繧ゅ∵署譯医〒縺阪ｋLP縺ｮ蝙九・譏守｢ｺ縺ｧ縺吶・/h2>
+          <p>遨ｺ縺ｮ蝓九ａ霎ｼ縺ｿ譫繧医ｊ縲√←繧薙↑蜍昴■遲九〒邨・ａ繧九°繧貞・縺ｫ隕九○縺溘⊇縺・′縲∫嶌隲・燕縺ｮ繧､繝｡繝ｼ繧ｸ縺梧ｹｧ縺阪ｄ縺吶￥縺ｪ繧翫∪縺吶・/p>
+        </div>
+        <div class="portfolio-grid">
+          <article class="portfolio-card">
+            <a class="portfolio-banner" href="https://gentle-gelato-7df9dd.netlify.app" target="_blank" rel="noopener noreferrer">
+              <img src="images/portfolio/banner-1.png" alt="和の高級感を訴求した飲食店LPのバナー">
+            </a>
+            <div class="portfolio-body">
+              <h3>高単価帯の和食・海鮮業態を想定したブランド訴求LP</h3>
+              <p>高級感のある配色、余白設計、コピーの見せ方を通して、価格ではなく体験価値で選ばせることを意識したLPです。第一印象で世界観を伝えたい飲食ブランド向けの構成にしています。</p>
+              <ul>
+                <li>ファーストビューで高級感と非日常感を演出</li>
+                <li>店舗価値を下げない上品なコピー設計</li>
+                <li>来店動機につながるブランド訴求中心の導線</li>
+              </ul>
+              <a class="button button-secondary portfolio-link" href="https://gentle-gelato-7df9dd.netlify.app" target="_blank" rel="noopener noreferrer">このLPを見る</a>
+            </div>
+          </article>
+          <article class="portfolio-card">
+            <a class="portfolio-banner" href="https://glowing-begonia-5ae03b.netlify.app" target="_blank" rel="noopener noreferrer">
+              <img src="images/portfolio/banner-2.png" alt="やわらかな美容系トーンのLPバナー">
+            </a>
+            <div class="portfolio-body">
+              <h3>美容機器・ケア商材を想定したやさしい訴求のLP</h3>
+              <p>やわらかなトーンと清潔感のあるUIで不安を抑えつつ、機能理解から申込まで自然につなげる美容系LPです。女性向け商材で大切な安心感と上品さの両立を意識しています。</p>
+              <ul>
+                <li>やわらかい配色で安心感をつくる導入設計</li>
+                <li>機能や流れを直感的に理解しやすい情報整理</li>
+                <li>比較検討から申込まで迷わせにくいCTA導線</li>
+              </ul>
+              <a class="button button-secondary portfolio-link" href="https://glowing-begonia-5ae03b.netlify.app" target="_blank" rel="noopener noreferrer">このLPを見る</a>
+            </div>
+          </article>
+        </div>      </div>
+    </section>
 
-            const observer = new IntersectionObserver((entries, localObserver) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("is-visible");
-                        localObserver.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Profile</span>
+          <h2>繝・け繝弱Ο繧ｸ繝ｼ縺ｨ縺薙→縺ｰ縺ｮ髢薙ｒ縺､縺ｪ縺仙宛菴懆・〒縺吶・/h2>
+          <p>蜊倥↓菴懊ｌ繧九□縺代〒縺ｪ縺上∽ｽ輔ｒ縺ｩ縺・ｼ昴∴繧九∋縺阪°繧呈紛逅・＠縺ｪ縺後ｉ莨ｴ襍ｰ縺ｧ縺阪ｋ縺薙→縺悟ｼｷ縺ｿ縺ｧ縺吶・/p>
+        </div>
+        <div class="profile-wrap">
+          <article class="profile-card">
+            <div class="profile-name">Kenichi Nakatani</div>
+            <h3>荳ｭ隹ｷ 蛛･荳</h3>
+            <p>
+              遏ｳ蟾晉恁驥第ｲ｢蟶ゅｒ諡轤ｹ縺ｫ豢ｻ蜍輔ゆｺｬ驛ｽ螟門嵜隱槫､ｧ蟄ｦ蜊偵・≡豐｢螟ｧ蟄ｦ螟ｧ蟄ｦ髯｢菫ｮ莠・・              莉匁･ｭ蜍吝ｰょｿｵ譛滄俣繧堤ｵ後※繝輔Μ繝ｼ繝ｩ繝ｳ繧ｹ繧貞・髢九＠縲、I繝ｻ閾ｪ蜍募喧繧ｷ繧ｹ繝・Β縺ｮ讒狗ｯ峨°繧姥eb蛻ｶ菴懊∪縺ｧ縲・              繝・け繝弱Ο繧ｸ繝ｼ縺ｨ繝・じ繧､繝ｳ繧呈寺縺大粋繧上○縺滓署譯医ｒ陦後▲縺ｦ縺・∪縺吶・            </p>
+            <p style="margin-top: 16px;">
+              縲後↑繧薙→縺ｪ縺丈ｽ懊ｋ縲阪・縺ｧ縺ｯ縺ｪ縺上∽ｺ区･ｭ縺ｮ蠑ｷ縺ｿ縺ｨ隱ｭ縺ｿ謇九・蠢・炊繧呈紛逅・＠縺ｦ縲∵・譫懊↓縺､縺ｪ縺後ｋ蟆守ｷ壹∈關ｽ縺ｨ縺苓ｾｼ繧縺ｮ縺悟ｾ玲э縺ｧ縺吶・            </p>
+          </article>
+          <aside class="profile-stats">
+            <div class="profile-stat">
+              <small>Overall Rating</small>
+              <strong>4.4 / 5.0</strong>
+              <span>邯咏ｶ夂噪縺ｪ隧穂ｾ｡縺ｮ遨阪∩荳翫￡縺後≠繧翫∪縺吶・/span>
+            </div>
+            <div class="profile-stat">
+              <small>Completed Projects</small>
+              <strong>14莉ｶ</strong>
+              <span>1莉ｶ縺斐→縺ｮ蟇・ｺｦ繧剃ｿ昴■縺ｪ縺後ｉ遨阪∩荳翫￡縺溷ｮ溽ｸｾ縺ｧ縺吶・/span>
+            </div>
+            <div class="profile-stat">
+              <small>Completion Rate</small>
+              <strong>92%</strong>
+              <span>騾比ｸｭ縺ｧ謚輔￡蜃ｺ縺輔★縲∵怙蠕後∪縺ｧ莨ｴ襍ｰ縺吶ｋ蟋ｿ蜍｢繧帝㍾隕悶＠縺ｦ縺・∪縺吶・/span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-            document.querySelectorAll(".fade-in").forEach((element) => observer.observe(element));
-        });
-    </script>
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">FAQ</span>
+          <h2>逶ｸ隲・燕縺ｫ繧医￥縺ゅｋ荳榊ｮ峨↓縲∝・縺ｫ遲斐∴縺ｾ縺吶・/h2>
+          <p>萓晞ｼ縺ｮ縺励ｄ縺吶＆縺ｯ縲∝撫縺・粋繧上○蜑阪・螳牙ｿ・─縺ｧ縺九↑繧雁､峨ｏ繧翫∪縺吶ゅ％縺薙・縺ゅ∴縺ｦ蜴壹ａ縺ｫ縺励※縺ゅｊ縺ｾ縺吶・/p>
+        </div>
+        <div class="faq-grid">
+          <details class="faq-item" open>
+            <summary>縺ｾ縺讒区・縺悟崋縺ｾ縺｣縺ｦ縺・∪縺帙ｓ縲ゅ◎繧後〒繧ら嶌隲・〒縺阪∪縺吶°・・/summary>
+            <p>螟ｧ荳亥､ｫ縺ｧ縺吶ゅ・縺励ｍ讒区・縺梧尠譏ｧ縺ｪ谿ｵ髫弱⊇縺ｩ縲∫嶌隲・＞縺溘□縺丈ｾ｡蛟､縺後≠繧翫∪縺吶ら岼逧・∝膚蜩√∫炊諠ｳ鬘ｧ螳｢繧定ｵｷ轤ｹ縺ｫ謨ｴ逅・＠縺ｾ縺吶・/p>
+          </details>
+          <details class="faq-item" open>
+            <summary>譁・ｫ繧ょ性繧√※縺企｡倥＞縺ｧ縺阪∪縺吶°・・/summary>
+            <p>縺ｯ縺・ょ・蜴溽ｨｿ縺後≠繧句ｴ蜷医・謨ｴ縺医√↑縺・ｴ蜷医ｂ繝偵い繝ｪ繝ｳ繧ｰ蜀・ｮｹ繧偵ｂ縺ｨ縺ｫ隕句・縺励ｄ譛ｬ譁・・鬪ｨ譬ｼ繧呈署譯医＠縺ｾ縺吶・/p>
+          </details>
+          <details class="faq-item">
+            <summary>AI繧剃ｽｿ縺・→縲√←縺薙°莨ｼ縺溘ｈ縺・↑LP縺ｫ縺ｪ繧翫∪縺帙ｓ縺具ｼ・/summary>
+            <p>莨ｼ縺ｦ縺励∪縺・・縺ｯ縲、I縺ｫ荳ｸ謚輔￡縺励◆蝣ｴ蜷医〒縺吶るｫ倬溷喧縺ｫ縺ｯ菴ｿ縺・∪縺吶′縲∬ｨｴ豎りｻｸ繧・ｻ穂ｸ翫￡縺ｯ譯井ｻｶ縺斐→縺ｫ莠ｺ縺悟愛譁ｭ縺励※隧ｰ繧√∪縺吶・/p>
+          </details>
+          <details class="faq-item">
+            <summary>縺ｾ縺壹・霆ｽ縺冗嶌隲・□縺代〒繧ょ､ｧ荳亥､ｫ縺ｧ縺吶°・・/summary>
+            <p>繧ゅ■繧阪ｓ縺ｧ縺吶ら┌逅・↑蝟ｶ讌ｭ縺ｯ縺帙★縲∫樟迥ｶ縺ｮ隱ｲ鬘後↓蟇ｾ縺励※LP縺梧怏蜉ｹ縺九←縺・°繧ょ性繧√※邇・峩縺ｫ縺願ｿ斐＠縺励∪縺吶・/p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Contact</span>
+          <h2>縺ｾ縺壹・縲√＞縺ｾ蝗ｰ縺｣縺ｦ縺・ｋ縺薙→縺縺第蕗縺医※縺上□縺輔＞縲・/h2>
+          <p>邂・擅譖ｸ縺阪〒繧ょ､ｧ荳亥､ｫ縺ｧ縺吶ょ・螳ｹ縺悟崋縺ｾ縺｣縺ｦ縺・↑縺上※繧ゅ∫嶌隲・＠縺ｪ縺後ｉ謨ｴ逅・〒縺阪∪縺吶・/p>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>蜈ｱ譛峨＞縺溘□縺代ｋ縺ｨ騾ｲ縺ｿ繧・☆縺・・螳ｹ</h3>
+            <p>蜈ｨ驛ｨ縺昴ｍ縺｣縺ｦ縺・↑縺上※繧ょ撫鬘後≠繧翫∪縺帙ｓ縲ゅ≠繧九ｂ縺ｮ縺縺代〒螟ｧ荳亥､ｫ縺ｧ縺吶・/p>
+            <ul class="contact-list">
+              <li>菴輔ｒ螢ｲ繧翫◆縺ЛP縺・/li>
+              <li>莉翫・髮・ｮ｢繧・撫縺・粋繧上○縺ｮ隱ｲ鬘・/li>
+              <li>蜿り・↓縺励◆縺・し繧､繝医ｄ遶ｶ蜷・RL</li>
+              <li>蟶梧悍縺吶ｋ蜈ｬ髢区凾譛溘ｄ縺悶▲縺上ｊ莠育ｮ玲─</li>
+            </ul>
+          </article>
+          <aside class="contact-panel">
+            <strong class="serif">辟｡譁儉P險ｺ譁ｭ縺ｮ蜈･蜿｣繧偵√％縺薙↓髮・ｴ・・/strong>
+            <p>螳滄°逕ｨ譎ゅ・縺薙・繝懊ち繝ｳ繧偵ヵ繧ｩ繝ｼ繝繧・ｿ懷供蟆守ｷ壹↓蟾ｮ縺玲崛縺医ｋ縺縺代〒菴ｿ縺医ｋ讒区・縺ｫ縺励※縺ゅｊ縺ｾ縺吶・/p>
+            <a class="button button-primary" href="#">辟｡譁儉P險ｺ譁ｭ繧ｷ繝ｼ繝医∈騾ｲ繧</a>
+            <div class="contact-foot">繝輔か繝ｼ繝URL譛ｪ險ｭ螳壹・縺溘ａ縲∫樟迥ｶ縺ｯ蟾ｮ縺玲崛縺亥燕縺ｮ蟆守ｷ壹Λ繝吶Ν縺ｨ縺励※驟咲ｽｮ縺励※縺・∪縺吶・/div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Kenichi Nakatani. All rights reserved.
+  </footer>
 </body>
 </html>
+
+
+
