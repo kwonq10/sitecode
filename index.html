@@ -1,787 +1,526 @@
-﻿<!DOCTYPE html>
-<html lang="ja">
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AI駆動の高速構築とSEOライティングの知見で、成果にこだわるLPを制作。中谷健一のLP制作ポートフォリオです。">
-  <title>中谷健一 | LP制作ポートフォリオ</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy: #132b46;
-      --navy-deep: #0a1727;
-      --cyan: #4fc7ea;
-      --orange: #ff7b4d;
-      --paper: #f6f8fb;
-      --card: #ffffff;
-      --text: #233548;
-      --muted: #617387;
-      --line: #dbe5ef;
-      --shadow: 0 18px 40px rgba(19, 43, 70, 0.12);
-      --radius-lg: 28px;
-      --radius-md: 18px;
-      --radius-sm: 12px;
-      --max: 1120px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Noto Sans JP', sans-serif;
-      color: var(--text);
-      background: var(--paper);
-      line-height: 1.8;
-      letter-spacing: 0.03em;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .serif { font-family: 'Cormorant Garamond', serif; }
-
-    .section { padding: 88px 0; }
-
-    .section-heading {
-      max-width: 760px;
-      margin: 0 auto 48px;
-      text-align: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      color: var(--cyan);
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(30px, 5vw, 48px);
-      line-height: 1.2;
-      color: var(--navy);
-      margin-bottom: 14px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      background: rgba(10, 23, 39, 0.78);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .topbar-inner {
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      color: white;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand small {
-      font-size: 11px;
-      color: rgba(255,255,255,0.6);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .brand strong {
-      font-size: 15px;
-      letter-spacing: 0.08em;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      color: rgba(255,255,255,0.76);
-      font-size: 13px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 54px;
-      padding: 0 26px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-    }
-
-    .button:hover { transform: translateY(-2px); }
-
-    .button-primary {
-      background: linear-gradient(135deg, var(--orange), #ff9c73);
-      color: white;
-      box-shadow: 0 14px 28px rgba(255,123,77,0.28);
-    }
-
-    .button-secondary {
-      background: white;
-      color: var(--navy);
-      border: 1px solid var(--line);
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 15% 18%, rgba(79,199,234,0.18), transparent 24%),
-        radial-gradient(circle at 82% 20%, rgba(255,123,77,0.16), transparent 20%),
-        linear-gradient(145deg, #081321 0%, #133458 60%, #1f4b77 100%);
-      color: white;
-      padding: 84px 0 92px;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 22px;
-    }
-
-    .hero-badge {
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
-      color: rgba(255,255,255,0.9);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .hero-copy h1 {
-      font-size: clamp(38px, 7vw, 72px);
-      line-height: 0.98;
-      margin-bottom: 22px;
-      font-weight: 700;
-    }
-
-    .hero-copy p {
-      color: rgba(255,255,255,0.82);
-      font-size: 15px;
-      max-width: 640px;
-    }
-
-    .hero-points {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 14px;
-      margin: 30px 0;
-    }
-
-    .hero-point {
-      padding: 16px;
-      border-radius: var(--radius-md);
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .hero-point strong {
-      display: block;
-      color: #ffd69f;
-      font-size: 26px;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .hero-point span {
-      color: rgba(255,255,255,0.8);
-      font-size: 13px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .hero-note { color: rgba(255,255,255,0.62); font-size: 12px; }
-
-    .hero-card {
-      padding: 28px;
-      border-radius: var(--radius-lg);
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.14);
-      box-shadow: 0 24px 48px rgba(0,0,0,0.18);
-    }
-
-    .hero-card h2 {
-      font-size: 28px;
-      line-height: 1.25;
-      margin-bottom: 18px;
-    }
-
-    .hero-list {
-      display: grid;
-      gap: 12px;
-      list-style: none;
-    }
-
-    .hero-list li {
-      padding: 14px 16px;
-      border-radius: var(--radius-sm);
-      background: rgba(8,19,33,0.32);
-      color: rgba(255,255,255,0.86);
-      font-size: 14px;
-    }
-
-    .signal {
-      margin-top: -26px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .signal-inner {
-      background: white;
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding: 24px 26px;
-      display: grid;
-      grid-template-columns: 1.3fr repeat(3, 1fr);
-      gap: 18px;
-      align-items: center;
-    }
-
-    .signal-lead strong {
-      display: block;
-      font-size: 24px;
-      color: var(--navy);
-      margin-bottom: 6px;
-    }
-
-    .signal-lead span, .signal-cell span { color: var(--muted); font-size: 13px; }
-    .signal-cell strong { display:block; color: var(--navy); font-size: 24px; margin-bottom: 6px; }
-
-    .cards-3, .portfolio-grid, .faq-grid {
-      display: grid;
-      gap: 22px;
-    }
-
-    .cards-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .portfolio-grid { grid-template-columns: repeat(2, minmax(0,1fr)); max-width: 980px; margin: 0 auto; }
-    .faq-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-
-    .card, .portfolio-card, .faq-item, .profile-card, .profile-stat, .contact-card, .contact-panel {
-      background: white;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow);
-    }
-
-    .card {
-      padding: 28px;
-      border-top: 4px solid var(--cyan);
-    }
-
-    .card h3 {
-      font-size: 20px;
-      color: var(--navy);
-      margin-bottom: 12px;
-      line-height: 1.45;
-    }
-
-    .card p { color: var(--muted); font-size: 14px; }
-
-    .card-list {
-      list-style: none;
-      margin-top: 16px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .card-list li {
-      position: relative;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .card-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--orange), var(--cyan));
-    }
-
-    .portfolio { background: linear-gradient(180deg, #eef5fb 0%, #f8fbff 100%); }
-
-    .portfolio-card {
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .portfolio-banner {
-      display: block;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      background: #dde6ef;
-    }
-
-    .portfolio-banner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .35s ease;
-    }
-
-    .portfolio-card:hover .portfolio-banner img { transform: scale(1.03); }
-
-    .portfolio-body {
-      padding: 26px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      flex: 1;
-    }
-
-    .portfolio-body h3 {
-      font-size: 22px;
-      line-height: 1.4;
-      color: var(--navy);
-    }
-
-    .portfolio-body p { color: var(--muted); font-size: 14px; }
-
-    .portfolio-body ul {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-      margin-top: 2px;
-    }
-
-    .portfolio-body li {
-      position: relative;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .portfolio-body li::before {
-      content: '>';
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--cyan);
-      font-weight: 700;
-    }
-
-    .portfolio-link { width: 100%; margin-top: auto; }
-
-    .profile-wrap, .contact-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 22px;
-      align-items: start;
-    }
-
-    .profile-card { padding: 32px; }
-    .profile-card h3 { font-size: 34px; color: var(--navy); margin-bottom: 16px; }
-    .profile-name { color: var(--cyan); font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 10px; }
-    .profile-card p { color: var(--muted); font-size: 14px; }
-
-    .profile-photo {
-      margin: 24px 0 0;
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 16px 36px rgba(19, 43, 70, 0.14);
-      border: 1px solid var(--line);
-      background: #edf3f8;
-    }
-
-    .profile-photo img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .profile-stats {
-      display: grid;
-      gap: 14px;
-    }
-
-    .profile-stat {
-      padding: 22px 24px;
-      background: linear-gradient(180deg, #102640 0%, #173a60 100%);
-      color: white;
-    }
-
-    .profile-stat small { display:block; color: rgba(255,255,255,0.68); font-size: 11px; letter-spacing: .16em; margin-bottom: 10px; text-transform: uppercase; }
-    .profile-stat strong { display:block; font-size: 30px; color: #ffd69f; margin-bottom: 8px; }
-    .profile-stat span { color: rgba(255,255,255,0.8); font-size: 13px; }
-
-    .faq-item { padding: 24px 26px; }
-    .faq-item summary { list-style:none; cursor:pointer; color: var(--navy); font-size: 17px; font-weight: 700; }
-    .faq-item summary::-webkit-details-marker { display:none; }
-    .faq-item p { margin-top: 14px; color: var(--muted); font-size: 14px; }
-
-    .contact {
-      background:
-        radial-gradient(circle at 20% 18%, rgba(79,199,234,0.18), transparent 24%),
-        radial-gradient(circle at 82% 72%, rgba(255,123,77,0.16), transparent 20%),
-        linear-gradient(140deg, #091322 0%, #123151 100%);
-      color: white;
-    }
-
-    .contact .section-heading h2,
-    .contact .section-heading p { color: white; }
-
-    .contact-card, .contact-panel {
-      padding: 30px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.14);
-      box-shadow: none;
-      backdrop-filter: blur(10px);
-    }
-
-    .contact-card h3, .contact-panel strong { color: white; }
-    .contact-card p, .contact-card li, .contact-panel p, .contact-foot { color: rgba(255,255,255,0.78); }
-    .contact-list { list-style:none; display:grid; gap:10px; margin-top: 16px; }
-    .contact-list li { position:relative; padding-left: 18px; font-size: 14px; }
-    .contact-list li::before { content:''; position:absolute; left:0; top:10px; width:8px; height:8px; border-radius:50%; background:#ffd69f; }
-    .contact-panel strong { display:block; font-size: 30px; line-height:1.2; margin-bottom: 12px; }
-    .contact-panel p { font-size: 14px; margin-bottom: 20px; }
-    .contact-panel .button { width: 100%; }
-    .contact-foot { margin-top: 14px; font-size: 12px; }
-
-    footer {
-      background: var(--navy-deep);
-      color: rgba(255,255,255,0.55);
-      text-align: center;
-      padding: 24px 16px;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-    }
-
-    @media (max-width: 960px) {
-      .hero-inner,
-      .signal-inner,
-      .cards-3,
-      .portfolio-grid,
-      .faq-grid,
-      .profile-wrap,
-      .contact-grid,
-      .hero-points {
-        grid-template-columns: 1fr;
-      }
-
-      .signal { margin-top: 0; }
-    }
-
-    @media (max-width: 720px) {
-      .section { padding: 72px 0; }
-      .topbar-inner { min-height: 62px; }
-      .nav a:not(.button-primary) { display: none; }
-      .hero { padding: 58px 0 72px; }
-      .hero-card, .card, .portfolio-body, .faq-item, .profile-card, .profile-stat, .contact-card, .contact-panel, .signal-inner { padding: 22px; }
-      .hero-actions { display:grid; }
-      .hero-actions .button { width: 100%; }
-      .button { width: 100%; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="一日限定、予約優先の特製蟹海鮮丼。旬の蟹を最も贅沢に味わう一杯を、売り切れ前にご予約ください。">
+    <title>極上蟹海鮮丼 | 一日限定・予約優先</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "base-black": "#0a0a0a",
+                        "ink-black": "#1C1C1C",
+                        "gold": "#c9a84c",
+                        "text-main": "#FFFFFF",
+                        "text-sub": "#f5f0e8",
+                        "text-fog": "#888888"
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif JP"', "serif"],
+                        sans: ['"Noto Sans JP"', "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+        }
+
+        .font-serif,
+        h1,
+        h2,
+        h3 {
+            font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-section {
+            height: 100vh;
+            height: 100svh;
+            min-height: 680px;
+        }
+
+        .hero-bg-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            z-index: 0;
+            opacity: 0.78;
+        }
+
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.62) 0%,
+                rgba(0, 0, 0, 0.34) 42%,
+                rgba(0, 0, 0, 0.88) 100%
+            );
+            z-index: 1;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        @keyframes scrollDown {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+    </style>
 </head>
-<body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="#top">
-        <small>Landing Page Production</small>
-        <strong>中谷健一 / LP制作ポートフォリオ</strong>
-      </a>
-      <nav class="nav">
-        <a href="#service">支援内容</a>
-        <a href="#portfolio">制作事例</a>
-        <a class="button button-primary" href="#contact">無料診断を相談する</a>
-      </nav>
+<body class="bg-base-black text-text-sub font-sans antialiased">
+    <header class="hero-section relative w-full flex flex-col justify-center items-center overflow-hidden">
+        <img src="images/hero.jpg" alt="旬の蟹海鮮丼" class="hero-bg-img">
+
+        <div class="relative z-[3] w-full max-w-[760px] mx-auto px-6 text-center flex flex-col items-center">
+            <div class="inline-flex flex-wrap justify-center items-center gap-x-3 gap-y-2 mb-6 rounded-full border border-gold/40 bg-base-black/55 px-4 py-2 text-[11px] tracking-[0.16em] text-gold backdrop-blur-sm">
+                <span>数量限定</span>
+                <span class="h-1 w-1 rounded-full bg-gold"></span>
+                <span>予約優先</span>
+                <span class="h-1 w-1 rounded-full bg-gold"></span>
+                <span>本日残り3食</span>
+            </div>
+
+            <h1 class="font-serif text-text-main flex flex-col gap-3 md:gap-5 mb-6">
+                <span class="text-[30px] sm:text-[42px] md:text-[56px] tracking-[0.1em] font-bold leading-tight" style="text-shadow: 0 2px 20px rgba(0,0,0,0.85), 0 1px 4px rgba(0,0,0,0.95);">
+                    一日限定。
+                </span>
+                <span class="text-[24px] sm:text-[34px] md:text-[46px] tracking-[0.05em] leading-[1.45] font-semibold" style="text-shadow: 0 2px 20px rgba(0,0,0,0.85), 0 1px 4px rgba(0,0,0,0.95);">
+                    旬の蟹を贅沢に味わう<br>特製海鮮丼。
+                </span>
+            </h1>
+
+            <p class="max-w-[620px] text-[13px] md:text-[16px] leading-[1.95] tracking-[0.06em] text-text-sub mb-6" style="text-shadow: 0 1px 12px rgba(0,0,0,0.85);">
+                注文ごとに仕上げる、<br class="sm:hidden">予約優先の特製蟹海鮮丼。<br>
+                今日だけの贅沢を、<br class="sm:hidden">売り切れ前に。
+            </p>
+
+            <div class="w-full max-w-[430px] rounded-sm border border-gold/30 bg-base-black/50 px-5 py-6 backdrop-blur-sm">
+                <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+                    <div class="border border-gold/15 px-2 py-4">
+                        <p class="text-[10px] tracking-[0.14em] text-[rgba(255,255,255,0.55)] mb-1">PRICE</p>
+                        <p class="font-serif text-[26px] text-text-main leading-none">¥3,000</p>
+                    </div>
+                    <div class="border border-gold/15 px-2 py-4">
+                        <p class="text-[10px] tracking-[0.14em] text-[rgba(255,255,255,0.55)] mb-1">LIMIT</p>
+                        <p class="font-serif text-[28px] text-gold leading-none font-bold">3食</p>
+                    </div>
+                    <div class="border border-gold/15 px-2 py-4">
+                        <p class="text-[10px] tracking-[0.14em] text-[rgba(255,255,255,0.55)] mb-1">STYLE</p>
+                        <p class="text-[12px] leading-[1.5] text-text-main">予約優先<br>店頭受け取り</p>
+                    </div>
+                </div>
+                <a href="#" onclick="openPortfolioModal(); return false;" class="block w-full bg-gold text-base-black font-serif py-4 px-6 rounded-sm text-[15px] tracking-[0.12em] hover:bg-[#E8CE73] transition-colors duration-300">
+                    本日分を予約する
+                </a>
+                <p class="mt-4 text-[11px] tracking-[0.12em] text-[rgba(255,255,255,0.6)]">
+                    売り切れ次第終了 / 受け取り時間は予約時にご案内 / 当日分の確保は事前予約が確実です
+                </p>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-[3] flex flex-col items-center opacity-70">
+            <span class="text-xs tracking-widest mb-2 font-serif text-gold">Scroll</span>
+            <div class="w-[1px] h-12 bg-gold/50 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-full bg-gold animate-[scrollDown_1.5s_ease-in-out_infinite]"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-base-black pt-[60px] pb-[80px] px-6 relative z-10">
+        <div class="max-w-[720px] mx-auto fade-in">
+            <h2 class="font-serif text-[28px] md:text-[34px] text-gold text-center mb-10 tracking-[0.1em] leading-relaxed">
+                ただ満たすだけの<br>一杯では、<br>物足りない方へ。
+            </h2>
+            <div class="space-y-8 text-[14px] leading-[2.1] tracking-[0.06em] text-[rgba(255,255,255,0.78)]">
+                <p>
+                    せっかく選ぶなら、記憶に残る一杯を食べたい。
+                    量だけでも、映えだけでもない。
+                    口に入れた瞬間の満足感まで含めて、<span class="text-[#c9a84c] font-medium">また食べたいと思える体験</span>を目指しました。
+                </p>
+                <p>
+                    主役は、しっかり存在感のある蟹。
+                    そこに鮮魚の華やかさと、食べ進めても濃度が落ちない設計を重ねています。
+                    <span class="text-[#c9a84c] font-medium">今日は少し良いものを食べたい日</span>に、迷わず選べる一杯です。
+                </p>
+                <p>
+                    数に限りがあるからこそ、仕上がりに妥協しない。
+                    その一杯を確実に味わっていただくための、予約優先販売です。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-ink-black py-[60px] px-6 relative z-10 border-y border-gold/10">
+        <div class="max-w-[840px] mx-auto fade-in">
+            <div class="border border-gold/30 p-8 md:p-10 relative">
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-ink-black px-4 font-serif text-gold text-sm tracking-[0.18em] whitespace-nowrap">
+                    選ばれる理由
+                </div>
+
+                <div class="text-center mb-12 mt-4">
+                    <h2 class="font-serif text-[24px] md:text-[30px] font-medium text-text-main tracking-[0.08em] mb-4">
+                        高そう、ではなく<br><span class="text-[#c9a84c]">高くても食べたい</span><br>一杯へ。
+                    </h2>
+                    <p class="text-[14px] leading-[2] text-[rgba(255,255,255,0.75)] tracking-[0.06em] max-w-[620px] mx-auto">
+                        素材の印象だけで終わらせず、食べ始めから食べ終わりまで満足度が続くように設計。
+                        見た目の豪華さと、口に入れた瞬間の納得感を両立させています。
+                    </p>
+                </div>
+
+                <div class="grid gap-6 md:grid-cols-3 text-center">
+                    <div class="border border-gold/15 px-5 py-6">
+                        <p class="font-serif text-gold text-[20px] tracking-[0.12em] mb-3">蟹の存在感</p>
+                        <p class="text-[13px] leading-[1.95] text-[rgba(255,255,255,0.74)]">
+                            主役としてしっかり感じる量感と旨み。ひと口目から満足感が立ち上がります。
+                        </p>
+                    </div>
+                    <div class="border border-gold/15 px-5 py-6">
+                        <p class="font-serif text-gold text-[20px] tracking-[0.12em] mb-3">注文ごとに仕上げ</p>
+                        <p class="text-[13px] leading-[1.95] text-[rgba(255,255,255,0.74)]">
+                            香り、温度、食感がいちばん良いタイミングでお渡しするための予約優先販売です。
+                        </p>
+                    </div>
+                    <div class="border border-gold/15 px-5 py-6">
+                        <p class="font-serif text-gold text-[20px] tracking-[0.12em] mb-3">最後まで濃い満足</p>
+                        <p class="text-[13px] leading-[1.95] text-[rgba(255,255,255,0.74)]">
+                            一口目だけ派手な丼ではなく、食べ終わるまで期待が落ちない構成に仕上げています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-base-black py-[60px] px-6 relative z-10">
+        <div class="max-w-[760px] mx-auto fade-in">
+            <div class="text-center mb-12">
+                <p class="text-gold text-[12px] tracking-[0.18em] mb-4">TRUST BY NUMBERS</p>
+                <h2 class="font-serif text-[28px] md:text-[34px] text-text-main tracking-[0.08em] leading-relaxed">
+                    数字が、<br>満足度を物語る。
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 gap-[24px] border-y border-gold/20 py-10 mb-6">
+                <div class="text-center">
+                    <p class="text-[14px] text-[rgba(255,255,255,0.75)] tracking-wider mb-2">リピート率</p>
+                    <p class="font-serif text-gold leading-none"><span class="text-[54px] md:text-[68px] font-bold">94.8</span><span class="text-xl md:text-2xl ml-1">%</span></p>
+                    <p class="text-[11px] text-[rgba(255,255,255,0.45)] mt-3">自社集計 / 過去販売分より算出</p>
+                </div>
+                <div class="text-center md:border-l border-gold/20">
+                    <p class="text-[14px] text-[rgba(255,255,255,0.75)] tracking-wider mb-2">累計販売数</p>
+                    <p class="font-serif text-gold leading-none"><span class="text-[54px] md:text-[68px] font-bold">50,000</span><span class="text-base md:text-lg ml-2">食突破</span></p>
+                    <p class="text-[11px] text-[rgba(255,255,255,0.45)] mt-3">期間累計 / 自社実績</p>
+                </div>
+            </div>
+
+            <p class="text-center text-[13px] leading-[2] text-[rgba(255,255,255,0.72)] tracking-[0.06em]">
+                味の好みは人それぞれでも、また食べたいという評価がこの一杯の価値です。
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-base-black py-[60px] relative z-10 overflow-hidden">
+        <div class="max-w-[720px] mx-auto px-6 fade-in">
+            <div class="relative w-full aspect-video mb-12 overflow-hidden rounded-sm shadow-2xl border border-gold/10">
+                <img src="images/donburi.jpg" alt="蟹海鮮丼の写真" class="absolute inset-0 w-full h-full object-cover" style="object-position: center 55%;">
+                <div class="absolute inset-0 flex items-center justify-center bg-base-black/35">
+                    <p class="font-serif text-[24px] md:text-[30px] text-text-main tracking-[0.14em] text-center leading-loose drop-shadow-md">
+                        一目で、<br>食べたくなる。
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-[14px] leading-[2] tracking-[0.06em] text-center text-[rgba(255,255,255,0.75)] space-y-5">
+                <p>
+                    蓋を開けた瞬間の華やかさ。箸を入れた瞬間の期待感。
+                    そのどちらも裏切らないよう、見た目の迫力と食べたときの満足感を両立させました。
+                </p>
+                <p class="text-[11px] text-[rgba(255,255,255,0.45)]">
+                    写真は実際の提供イメージです。仕入れ状況により内容が一部変わる場合があります。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-ink-black py-[60px] px-6 relative z-10 border-y border-gold/10">
+        <div class="max-w-[760px] mx-auto fade-in">
+            <div class="text-center mb-12">
+                <p class="text-gold text-[12px] tracking-[0.18em] mb-4">WHY 3,000 YEN</p>
+                <h2 class="font-serif text-[28px] md:text-[34px] text-text-main tracking-[0.08em]">
+                    3,000円でも<br>選ばれる理由があります。
+                </h2>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-3 mb-8">
+                <div class="border border-gold/15 px-5 py-6">
+                    <p class="font-serif text-gold text-[18px] tracking-[0.12em] mb-3">素材</p>
+                    <p class="text-[13px] leading-[1.95] text-[rgba(255,255,255,0.74)]">
+                        蟹を主役としてしっかり感じられるよう、量感と華やかさの両方を確保しています。
+                    </p>
+                </div>
+                <div class="border border-gold/15 px-5 py-6">
+                    <p class="font-serif text-gold text-[18px] tracking-[0.12em] mb-3">仕上げ</p>
+                    <p class="text-[13px] leading-[1.95] text-[rgba(255,255,255,0.74)]">
+                        注文ごとに整えることで、香りや食感をベストな状態に近づけています。
+                    </p>
+                </div>
+                <div class="border border-gold/15 px-5 py-6">
+                    <p class="font-serif text-gold text-[18px] tracking-[0.12em] mb-3">限定性</p>
+                    <p class="text-[13px] leading-[1.95] text-[rgba(255,255,255,0.74)]">
+                        品質を保つため、数量を追わず、一杯ごとの満足度を優先しています。
+                    </p>
+                </div>
+            </div>
+
+            <p class="text-center text-[14px] leading-[2] tracking-[0.06em] text-[rgba(255,255,255,0.76)] max-w-[680px] mx-auto">
+                価格だけを見れば安くはないかもしれません。
+                それでも選ばれるのは、素材・仕上げ・満足感のどれも妥協していないからです。
+                今日は少し良いものを食べたい日に、後悔させない一杯を目指しています。
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-base-black py-[60px] px-6 relative z-10">
+        <div class="max-w-[760px] mx-auto fade-in">
+            <div class="text-center mb-12">
+                <p class="text-gold text-[12px] tracking-[0.18em] mb-4">REVIEWS</p>
+                <h2 class="font-serif text-[28px] md:text-[34px] text-text-main tracking-[0.08em]">
+                    実際に食べた方の声
+                </h2>
+            </div>
+
+            <div class="grid gap-5 md:grid-cols-3">
+                <div class="border border-gold/15 bg-ink-black/30 px-5 py-6">
+                    <p class="text-[10px] tracking-[0.14em] text-gold mb-3">30代女性</p>
+                    <p class="text-[13px] leading-[2] text-[rgba(255,255,255,0.76)]">
+                        見た目の豪華さだけではなく、食べた瞬間にこれは違うと分かりました。価格以上の満足感でした。
+                    </p>
+                </div>
+                <div class="border border-gold/15 bg-ink-black/30 px-5 py-6">
+                    <p class="text-[10px] tracking-[0.14em] text-gold mb-3">40代男性</p>
+                    <p class="text-[13px] leading-[2] text-[rgba(255,255,255,0.76)]">
+                        蟹の存在感がしっかりあって、最後まで飽きずに食べられました。次も予約したいです。
+                    </p>
+                </div>
+                <div class="border border-gold/15 bg-ink-black/30 px-5 py-6">
+                    <p class="text-[10px] tracking-[0.14em] text-gold mb-3">20代女性</p>
+                    <p class="text-[13px] leading-[2] text-[rgba(255,255,255,0.76)]">
+                        ちょっと贅沢したい日にちょうどいい一杯。人にもすすめたくなるクオリティでした。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-base-black pt-[100px] pb-[60px] px-6 relative z-10" id="cta-section">
+        <div class="max-w-[760px] mx-auto fade-in">
+            <h2 class="font-serif text-[28px] md:text-[34px] text-text-main text-center tracking-[0.08em] mb-12">
+                今日の一杯を、<br>先に確保してください。
+            </h2>
+
+            <div class="border-y border-gold/40 pt-0 pb-12 px-4 md:px-12 flex flex-col items-center relative">
+                <div class="absolute top-0 left-0 w-2 h-2 border-t border-l border-gold" style="z-index:2;"></div>
+                <div class="absolute top-0 right-0 w-2 h-2 border-t border-r border-gold" style="z-index:2;"></div>
+                <div class="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-gold" style="z-index:2;"></div>
+                <div class="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-gold" style="z-index:2;"></div>
+
+                <h3 class="font-serif text-[26px] md:text-[32px] text-gold tracking-[0.08em] mb-6 mt-10 text-center leading-[1.6]">
+                    売り切れ前に、<br>今日の一杯を<br>確保してください。
+                </h3>
+
+                <img src="images/section-image.jpg" alt="蟹海鮮丼の盛り付け" class="mb-8 shadow-lg" style="width:100%;height:300px;object-fit:cover;object-position:center 20%;display:block;border-radius:4px;">
+
+                <div class="text-center mb-6">
+                    <p style="font-size: 13px; color: #c9a84c; letter-spacing: 0.08em;" class="leading-loose">
+                        数量限定のため、予定数に達し次第受付終了となります。<br>
+                        食べたいと思った今が、いちばん確実です。
+                    </p>
+                </div>
+
+                <p class="font-serif text-5xl text-text-main tracking-wider mb-6">
+                    ¥3,000 <span class="text-[14px] text-[rgba(255,255,255,0.75)] tracking-normal font-sans">(税込)</span>
+                </p>
+
+                <ul class="text-[14px] tracking-wide leading-[2] text-center text-[rgba(255,255,255,0.75)] mb-8 space-y-2">
+                    <li>店頭受け取り / 予約優先販売</li>
+                    <li>本日残り3食</li>
+                    <li>受け取り時間は予約時にご案内</li>
+                    <li>内容は仕入れ状況により一部変更となる場合があります</li>
+                </ul>
+
+                <a href="#" onclick="openPortfolioModal(); return false;" class="block w-full max-w-[360px] bg-gold text-base-black font-serif font-bold py-4 px-6 rounded-[2px] text-center shadow-[0_4px_14px_rgba(201,168,76,0.15)] hover:bg-[#E8CE73] transition-colors duration-300">
+                    本日分を予約する
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-base-black py-[60px] px-6 relative z-10">
+        <div class="max-w-[760px] mx-auto fade-in">
+            <div class="text-center mb-12">
+                <p class="text-gold text-[12px] tracking-[0.18em] mb-4">FAQ</p>
+                <h2 class="font-serif text-[28px] md:text-[34px] text-text-main tracking-[0.08em]">
+                    ご予約前によくある質問
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="border border-gold/15 px-5 py-4 group" open>
+                    <summary class="cursor-pointer list-none font-serif text-text-main tracking-[0.06em] flex items-center justify-between">
+                        当日予約は可能ですか
+                        <span class="text-gold group-open:rotate-45 transition-transform duration-300">＋</span>
+                    </summary>
+                    <p class="mt-4 text-[13px] leading-[2] text-[rgba(255,255,255,0.72)]">
+                        空きがある場合のみご案内可能です。確実にお受け取りいただくため、事前予約をおすすめしています。
+                    </p>
+                </details>
+                <details class="border border-gold/15 px-5 py-4 group" open>
+                    <summary class="cursor-pointer list-none font-serif text-text-main tracking-[0.06em] flex items-center justify-between">
+                        受け取り時間は選べますか
+                        <span class="text-gold group-open:rotate-45 transition-transform duration-300">＋</span>
+                    </summary>
+                    <p class="mt-4 text-[13px] leading-[2] text-[rgba(255,255,255,0.72)]">
+                        ご予約時にご希望時間を伺い、当日の状況に合わせてご案内します。
+                    </p>
+                </details>
+                <details class="border border-gold/15 px-5 py-4 group">
+                    <summary class="cursor-pointer list-none font-serif text-text-main tracking-[0.06em] flex items-center justify-between">
+                        キャンセルはできますか
+                        <span class="text-gold group-open:rotate-45 transition-transform duration-300">＋</span>
+                    </summary>
+                    <p class="mt-4 text-[13px] leading-[2] text-[rgba(255,255,255,0.72)]">
+                        仕込みの都合上、直前キャンセルはお受けできない場合があります。詳細は予約時にご案内します。
+                    </p>
+                </details>
+                <details class="border border-gold/15 px-5 py-4 group">
+                    <summary class="cursor-pointer list-none font-serif text-text-main tracking-[0.06em] flex items-center justify-between">
+                        アレルギーがある場合はどうすればいいですか
+                        <span class="text-gold group-open:rotate-45 transition-transform duration-300">＋</span>
+                    </summary>
+                    <p class="mt-4 text-[13px] leading-[2] text-[rgba(255,255,255,0.72)]">
+                        蟹や魚介を使用しています。気になる点があれば、予約前に必ずご相談ください。
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-base-black py-[60px] pb-[160px] px-6 relative z-10">
+        <div class="max-w-[640px] mx-auto text-center fade-in">
+            <p class="font-serif text-xl md:text-2xl tracking-[0.12em] leading-loose mb-6 text-text-main">
+                迷う前に、<br>今日の一杯を確保してください。
+            </p>
+            <p class="text-[14px] tracking-[0.1em] text-gold mb-8 leading-[2]">
+                数量限定のため、予定数に達し次第受付終了となります。<br>
+                今ならまだ、ご案内できます。
+            </p>
+            <a href="#" onclick="openPortfolioModal(); return false;" class="inline-flex items-center justify-center border border-gold bg-gold text-base-black font-serif px-8 py-4 tracking-[0.14em] hover:bg-[#E8CE73] transition-colors duration-300">
+                本日分を予約する
+            </a>
+        </div>
+    </section>
+
+    <div class="fixed bottom-0 left-0 w-full z-50 pointer-events-none">
+        <div class="max-w-[640px] mx-auto bg-base-black/95 backdrop-blur-md border-t border-gold/30 p-4 pb-6 pointer-events-auto flex flex-col items-center">
+            <p style="color: #c9a84c; font-size: 13px; letter-spacing: 0.1em;" class="mb-3 font-serif">
+                本日残り <span style="font-size: 24px;" class="font-bold">3</span> 食
+            </p>
+
+            <a href="#" onclick="openPortfolioModal(); return false;" class="block w-full bg-[#c9a84c] text-base-black font-serif font-bold py-4 px-2 rounded-[2px] text-center shadow-[0_4px_14px_rgba(201,168,76,0.15)] hover:bg-[#E8CE73] transition-colors duration-300">
+                <span class="text-[16px] tracking-[0.08em]">本日分を予約する / ¥3,000</span>
+            </a>
+
+            <p style="font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 12px;" class="text-center tracking-wider">
+                店頭受け取り / 売り切れ次第終了 / 予約優先販売
+            </p>
+        </div>
     </div>
-  </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <div class="hero-badges">
-            <span class="hero-badge">AI駆動で高速構築</span>
-            <span class="hero-badge">SEOライティング知見</span>
-            <span class="hero-badge">訴求整理から伴走</span>
-          </div>
-          <h1 class="serif">売るための整理を、<br>美しく。<br>速く。</h1>
-          <p>見た目を整えるだけでなく、誰に・何を・どんな順番で伝えるかまで設計したLPを制作します。AIで初速を上げつつ、訴求と仕上げは人の判断で丁寧に詰めます。</p>
-          <div class="hero-points">
-            <div class="hero-point">
-              <strong>92%</strong>
-              <span>クラウドワークス完了率</span>
-            </div>
-            <div class="hero-point">
-              <strong>100%</strong>
-              <span>承認率ベースの安心感</span>
-            </div>
-            <div class="hero-point">
-              <strong>Text + Design</strong>
-              <span>構成から実装まで一気通貫</span>
-            </div>
-          </div>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#portfolio">制作事例を見る</a>
-            <a class="button button-secondary" href="#contact">無料LP診断を相談する</a>
-          </div>
-          <p class="hero-note">強引な営業は行いません。まずはテキストベースの相談からで大丈夫です。</p>
+    <div id="portfolio-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/80 px-6 backdrop-blur-sm">
+        <div class="w-full max-w-[380px] border border-gold/30 bg-[#111111] px-7 py-10 text-center shadow-2xl">
+            <p class="text-gold text-[11px] tracking-[0.22em] mb-5">PORTFOLIO NOTICE</p>
+            <h2 class="font-serif text-[24px] leading-[1.7] text-text-main mb-4">
+                これは<br>ポートフォリオです。
+            </h2>
+            <p class="text-[13px] leading-[2] tracking-[0.05em] text-[rgba(255,255,255,0.72)] mb-8">
+                実際の予約・購入はできません。<br>
+                LPデザインと構成提案のサンプルとして制作しています。
+            </p>
+            <button onclick="closePortfolioModal()" class="w-full bg-gold px-6 py-4 font-serif text-[14px] tracking-[0.14em] text-base-black transition-colors duration-300 hover:bg-[#E8CE73]">
+                閉じる
+            </button>
         </div>
-        <aside class="hero-card">
-          <h2 class="serif">相談前に全部まとまっていなくても、前に進めます。</h2>
-          <ul class="hero-list">
-            <li>構成が曖昧でも、課題と強みの整理から一緒に進行</li>
-            <li>デザインだけでなく、見出し順とCTA配置まで提案</li>
-            <li>AIを使うのは雑に量産するためではなく、検討時間を増やすため</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
+    </div>
 
-    <section class="signal">
-      <div class="container signal-inner">
-        <div class="signal-lead">
-          <strong class="serif">このページ自体が、提案品質のサンプルです。</strong>
-          <span>速さだけでなく、読み手の理解順に沿って情報を並べることを大切にしています。</span>
-        </div>
-        <div class="signal-cell">
-          <strong>AI</strong>
-          <span>構築スピードを底上げ</span>
-        </div>
-        <div class="signal-cell">
-          <strong>SEO</strong>
-          <span>読み手理解の土台あり</span>
-        </div>
-        <div class="signal-cell">
-          <strong>1人対応</strong>
-          <span>意図がぶれず進行</span>
-        </div>
-      </div>
-    </section>
+    <script>
+        function openPortfolioModal() {
+            const modal = document.getElementById("portfolio-modal");
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+        }
 
-    <section class="section" id="service">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Service</span>
-          <h2>制作だけでなく、成果につながる整理まで引き受けます。</h2>
-          <p>単にHTMLを組むのではなく、訴求整理からCTA設計まで含めてLP全体を組み立てます。</p>
-        </div>
-        <div class="cards-3">
-          <article class="card">
-            <h3>構成設計と訴求整理</h3>
-            <p>商品特性、理想顧客、比較対象、不安要素を洗い出し、どこで何を伝えるべきかを整理します。</p>
-            <ul class="card-list">
-              <li>ファーストビューの言い切り整理</li>
-              <li>見出しの順番とCTA導線の設計</li>
-              <li>競合との差別化ポイントの言語化</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>AI活用による高速実装</h3>
-            <p>初動を速めながらも、案件ごとのトーンや密度が薄くならないよう最終判断は人が担います。</p>
-            <ul class="card-list">
-              <li>短納期でも破綻しにくい制作フロー</li>
-              <li>文言とデザインの往復が速い</li>
-              <li>改善前提のたたき台づくりにも対応</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>公開後を見据えた仕上げ</h3>
-            <p>スマホ表示、CTA前の心理障壁、FAQなど、離脱しやすい箇所まで含めて整えます。</p>
-            <ul class="card-list">
-              <li>モバイルファーストの最終調整</li>
-              <li>補足導線やFAQの設計</li>
-              <li>差し替えしやすい構造で実装</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
+        function closePortfolioModal() {
+            const modal = document.getElementById("portfolio-modal");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+        }
 
-    <section class="section portfolio" id="portfolio">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Portfolio</span>
-          <h2>実際に見られるLP事例</h2>
-          <p>バナー画像からそのまま実ページへ遷移できます。下のボタンからでも確認できます。</p>
-        </div>
-        <div class="portfolio-grid">
-          <article class="portfolio-card">
-            <a class="portfolio-banner" href="https://gentle-gelato-7df9dd.netlify.app" target="_blank" rel="noopener noreferrer">
-              <img src="images/portfolio/banner-1.png" alt="和の高級感を訴求した飲食店LPのバナー">
-            </a>
-            <div class="portfolio-body">
-              <h3>高単価帯の和食・海鮮業態を想定したブランド訴求LP</h3>
-              <p>高級感のある配色、余白設計、コピーの見せ方を通して、価格ではなく体験価値で選ばせることを意識したLPです。第一印象で世界観を伝えたい飲食ブランド向けの構成にしています。</p>
-              <ul>
-                <li>ファーストビューで高級感と非日常感を演出</li>
-                <li>店舗価値を下げない上品なコピー設計</li>
-                <li>来店動機につながるブランド訴求中心の導線</li>
-              </ul>
-              <a class="button button-secondary portfolio-link" href="https://gentle-gelato-7df9dd.netlify.app" target="_blank" rel="noopener noreferrer">このLPを見る</a>
-            </div>
-          </article>
-          <article class="portfolio-card">
-            <a class="portfolio-banner" href="https://glowing-begonia-5ae03b.netlify.app" target="_blank" rel="noopener noreferrer">
-              <img src="images/portfolio/banner-2.png" alt="やわらかな美容系トーンのLPバナー">
-            </a>
-            <div class="portfolio-body">
-              <h3>美容機器・ケア商材を想定したやさしい訴求のLP</h3>
-              <p>やわらかなトーンと清潔感のあるUIで不安を抑えつつ、機能理解から申込まで自然につなげる美容系LPです。女性向け商材で大切な安心感と上品さの両立を意識しています。</p>
-              <ul>
-                <li>やわらかい配色で安心感をつくる導入設計</li>
-                <li>機能や流れを直感的に理解しやすい情報整理</li>
-                <li>比較検討から申込まで迷わせにくいCTA導線</li>
-              </ul>
-              <a class="button button-secondary portfolio-link" href="https://glowing-begonia-5ae03b.netlify.app" target="_blank" rel="noopener noreferrer">このLPを見る</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+        document.addEventListener("DOMContentLoaded", function () {
+            const portfolioModal = document.getElementById("portfolio-modal");
+            portfolioModal.addEventListener("click", function (event) {
+                if (event.target === portfolioModal) {
+                    closePortfolioModal();
+                }
+            });
 
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Profile</span>
-          <h2>テクノロジーとことばの間をつなぐ制作者です。</h2>
-          <p>単に作れるだけでなく、何をどう伝えるべきかを整理しながら伴走できることが強みです。</p>
-        </div>
-        <div class="profile-wrap">
-          <article class="profile-card">
-            <div class="profile-name">Kenichi Nakatani</div>
-            <h3>中谷 健一</h3>
-            <p>石川県金沢市を拠点に活動。京都外国語大学卒、金沢大学大学院修了。他業務専念期間を経てフリーランスを再開し、AI・自動化システムの構築からWeb制作まで、テクノロジーとデザインを掛け合わせた提案を行っています。</p>
-            <p style="margin-top: 14px;">「なんとなく作る」のではなく、事業の強みと読み手の心理を整理して、成果につながる導線へ落とし込むのが得意です。</p>
-            <figure class="profile-photo">
-              <img src="images/profile/profile-photo.png" alt="中谷健一のプロフィール写真">
-            </figure>
-          </article>
-          <aside class="profile-stats">
-            <div class="profile-stat">
-              <small>Overall Rating</small>
-              <strong>4.4 / 5.0</strong>
-              <span>継続的な評価の積み上げがあります。</span>
-            </div>
-            <div class="profile-stat">
-              <small>Completion Rate</small>
-              <strong>92%</strong>
-              <span>途中で投げ出さず、最後まで伴走する姿勢を大切にしています。</span>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.15
+            };
 
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">FAQ</span>
-          <h2>相談前によくある不安に答えます。</h2>
-          <p>最初から全てが決まっていなくても大丈夫です。まずは現状と目的から共有いただければ進められます。</p>
-        </div>
-        <div class="faq-grid">
-          <details class="faq-item" open>
-            <summary>構成がまだ固まっていません。それでも相談できますか？</summary>
-            <p>大丈夫です。目的、商品、理想顧客を起点に、どんな順番で伝えるべきかを一緒に整理します。</p>
-          </details>
-          <details class="faq-item" open>
-            <summary>文章も含めてお願いできますか？</summary>
-            <p>はい。元原稿がある場合は整え、ない場合もヒアリング内容をもとに見出しや本文の骨格を提案します。</p>
-          </details>
-          <details class="faq-item">
-            <summary>AIを使うと、似たようなLPになりませんか？</summary>
-            <p>似てしまうのはAIに丸投げした場合です。高速化には使いますが、訴求軸や最終仕上げは案件ごとに人が判断して詰めます。</p>
-          </details>
-          <details class="faq-item">
-            <summary>まずは軽く相談だけでも大丈夫ですか？</summary>
-            <p>もちろんです。無理な営業はせず、現状の課題に対してLPが有効かどうかも含めて率直にお返しします。</p>
-          </details>
-        </div>
-      </div>
-    </section>
+            const observer = new IntersectionObserver((entries, localObserver) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        localObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
 
-    <section class="section contact" id="contact">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Contact</span>
-          <h2>まずは、いま困っていることだけ教えてください。</h2>
-          <p>箇条書きでも大丈夫です。内容が固まっていなくても、相談しながら整理できます。</p>
-        </div>
-        <div class="contact-grid">
-          <article class="contact-card">
-            <h3>共有いただけると進みやすい内容</h3>
-            <p>全部そろっていなくても問題ありません。あるものだけで大丈夫です。</p>
-            <ul class="contact-list">
-              <li>何を売りたいLPか</li>
-              <li>今の集客や問い合わせの課題</li>
-              <li>参考にしたいサイトや競合URL</li>
-              <li>希望する公開時期やざっくり予算感</li>
-            </ul>
-          </article>
-          <aside class="contact-panel">
-            <strong class="serif">無料LP診断の入口を、ここに。</strong>
-            <p>実運用時はこのボタンをフォームや応募導線に差し替えるだけで使える構成にしてあります。</p>
-            <a class="button button-primary" href="#">無料LP診断シートへ進む</a>
-            <div class="contact-foot">フォームURL未設定のため、現状は差し替え前のラベルとして配置しています。</div>
-          </aside>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2026 Kenichi Nakatani. All rights reserved.
-  </footer>
+            document.querySelectorAll(".fade-in").forEach((element) => observer.observe(element));
+        });
+    </script>
 </body>
 </html>
-
-
