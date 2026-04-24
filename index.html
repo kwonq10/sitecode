@@ -428,6 +428,22 @@
     .profile-name { color: var(--cyan); font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 10px; }
     .profile-card p { color: var(--muted); font-size: 14px; }
 
+    .profile-photo {
+      margin: 24px 0 0;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(19, 43, 70, 0.14);
+      border: 1px solid var(--line);
+      background: #edf3f8;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+    }
+
     .profile-stats {
       display: grid;
       gap: 14px;
@@ -685,17 +701,15 @@
             <h3>中谷 健一</h3>
             <p>石川県金沢市を拠点に活動。京都外国語大学卒、金沢大学大学院修了。他業務専念期間を経てフリーランスを再開し、AI・自動化システムの構築からWeb制作まで、テクノロジーとデザインを掛け合わせた提案を行っています。</p>
             <p style="margin-top: 14px;">「なんとなく作る」のではなく、事業の強みと読み手の心理を整理して、成果につながる導線へ落とし込むのが得意です。</p>
+            <figure class="profile-photo">
+              <img src="images/portfolio/banner-2.png" alt="中谷健一のプロフィールイメージ">
+            </figure>
           </article>
           <aside class="profile-stats">
             <div class="profile-stat">
               <small>Overall Rating</small>
               <strong>4.4 / 5.0</strong>
               <span>継続的な評価の積み上げがあります。</span>
-            </div>
-            <div class="profile-stat">
-              <small>Completed Projects</small>
-              <strong>14件</strong>
-              <span>1件ごとの密度を保ちながら積み上げた実績です。</span>
             </div>
             <div class="profile-stat">
               <small>Completion Rate</small>
@@ -769,3 +783,4 @@
   </footer>
 </body>
 </html>
+
