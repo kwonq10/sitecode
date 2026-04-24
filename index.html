@@ -3,207 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AI鬧・虚縺ｮ鬮倬滓ｧ狗ｯ峨→SEO繝ｩ繧､繝・ぅ繝ｳ繧ｰ縺ｮ遏･隕九〒縲∵・譫懊↓縺薙□繧上ｋLP繧定ｨｭ險医・蛻ｶ菴懊ゆｸｭ隹ｷ蛛･荳縺ｮLP蛻ｶ菴懊し繝ｼ繝薙せ邏ｹ莉九・繝ｼ繧ｸ縺ｧ縺吶・>
-  <title>荳ｭ隹ｷ蛛･荳 | 謌先棡縺ｫ蟇・○繧記P蛻ｶ菴・/title>
+  <meta name="description" content="AI駆動の高速構築とSEOライティングの知見で、成果にこだわるLPを制作。中谷健一のLP制作ポートフォリオです。">
+  <title>中谷健一 | LP制作ポートフォリオ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #081220;
-      --bg-soft: #11243c;
-      --surface: rgba(255, 255, 255, 0.08);
-      --surface-strong: rgba(255, 255, 255, 0.12);
-      --line: rgba(143, 226, 255, 0.18);
-      --text: #f8fbff;
-      --muted: rgba(248, 251, 255, 0.72);
-      --muted-strong: #d5e7f4;
-      --navy: #12375d;
-      --cyan: #6ee7ff;
-      --cyan-deep: #21b7df;
-      --coral: #ff845c;
-      --gold: #ffd591;
-      --paper: #f5f8fc;
-      --ink: #1f2c3a;
-      --ink-soft: #536476;
+      --navy: #132b46;
+      --navy-deep: #0a1727;
+      --cyan: #4fc7ea;
+      --orange: #ff7b4d;
+      --paper: #f6f8fb;
       --card: #ffffff;
-      --shadow: 0 24px 60px rgba(4, 13, 24, 0.2);
+      --text: #233548;
+      --muted: #617387;
+      --line: #dbe5ef;
+      --shadow: 0 18px 40px rgba(19, 43, 70, 0.12);
       --radius-lg: 28px;
       --radius-md: 18px;
       --radius-sm: 12px;
-      --max: 1160px;
+      --max: 1120px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: "Zen Kaku Gothic New", sans-serif;
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
       background: var(--paper);
-      color: var(--ink);
       line-height: 1.8;
       letter-spacing: 0.03em;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
 
     .container {
-      width: min(var(--max), calc(100% - 40px));
+      width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
     }
 
-    .section {
-      padding: 112px 0;
-    }
+    .serif { font-family: 'Cormorant Garamond', serif; }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--cyan-deep);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .eyebrow::before,
-    .eyebrow::after {
-      content: "";
-      width: 34px;
-      height: 1px;
-      background: currentColor;
-      opacity: 0.35;
-    }
+    .section { padding: 88px 0; }
 
     .section-heading {
       max-width: 760px;
-      margin-bottom: 52px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 14px;
     }
 
     .section-heading h2 {
-      font-size: clamp(30px, 5vw, 50px);
-      line-height: 1.25;
-      letter-spacing: 0.04em;
-      font-weight: 900;
-      color: #10233a;
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.2;
+      color: var(--navy);
+      margin-bottom: 14px;
     }
 
     .section-heading p {
-      margin-top: 18px;
-      color: var(--ink-soft);
-      font-size: 16px;
-    }
-
-    .serif {
-      font-family: "Cormorant Garamond", serif;
-      letter-spacing: 0.02em;
+      color: var(--muted);
+      font-size: 15px;
     }
 
     .topbar {
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(18px);
-      background: rgba(8, 18, 32, 0.74);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      background: rgba(10, 23, 39, 0.78);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .topbar-inner {
-      min-height: 74px;
+      min-height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 18px;
     }
 
     .brand {
+      color: white;
       display: flex;
       flex-direction: column;
       gap: 2px;
-      color: var(--text);
     }
 
     .brand small {
-      color: rgba(248, 251, 255, 0.6);
       font-size: 11px;
+      color: rgba(255,255,255,0.6);
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
     .brand strong {
-      font-size: 16px;
+      font-size: 15px;
       letter-spacing: 0.08em;
-      font-weight: 700;
     }
 
     .nav {
       display: flex;
       align-items: center;
-      gap: 18px;
-      color: rgba(248, 251, 255, 0.74);
+      gap: 16px;
+      color: rgba(255,255,255,0.76);
       font-size: 13px;
-      font-weight: 500;
     }
 
-    .cta-chip,
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      min-height: 54px;
+      padding: 0 26px;
       border-radius: 999px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    }
-
-    .cta-chip {
-      min-height: 48px;
-      padding: 0 22px;
-      background: linear-gradient(135deg, var(--coral), #ff9d73);
-      color: white;
       font-weight: 700;
-      box-shadow: 0 14px 32px rgba(255, 132, 92, 0.22);
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
     }
 
-    .cta-chip:hover,
-    .button:hover {
-      transform: translateY(-2px);
+    .button:hover { transform: translateY(-2px); }
+
+    .button-primary {
+      background: linear-gradient(135deg, var(--orange), #ff9c73);
+      color: white;
+      box-shadow: 0 14px 28px rgba(255,123,77,0.28);
+    }
+
+    .button-secondary {
+      background: white;
+      color: var(--navy);
+      border: 1px solid var(--line);
     }
 
     .hero {
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at 12% 18%, rgba(110, 231, 255, 0.2), transparent 24%),
-        radial-gradient(circle at 82% 16%, rgba(255, 132, 92, 0.18), transparent 22%),
-        linear-gradient(160deg, #06101d 0%, #10243b 48%, #183a5c 100%);
-      color: var(--text);
-      padding: 82px 0 96px;
+        radial-gradient(circle at 15% 18%, rgba(79,199,234,0.18), transparent 24%),
+        radial-gradient(circle at 82% 20%, rgba(255,123,77,0.16), transparent 20%),
+        linear-gradient(145deg, #081321 0%, #133458 60%, #1f4b77 100%);
+      color: white;
+      padding: 84px 0 92px;
     }
 
     .hero::before {
-      content: "";
+      content: '';
       position: absolute;
       inset: 0;
       background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: radial-gradient(circle at center, black 42%, transparent 88%);
+      background-size: 42px 42px;
+      mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
       pointer-events: none;
     }
 
@@ -211,357 +171,187 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 420px);
-      gap: 42px;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 30px;
       align-items: center;
     }
 
-    .hero-badge-row {
+    .hero-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
       margin-bottom: 22px;
     }
 
     .hero-badge {
-      padding: 9px 14px;
+      padding: 8px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--muted-strong);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.9);
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.08em;
     }
 
     .hero-copy h1 {
-      font-size: clamp(40px, 7vw, 74px);
-      line-height: 1.02;
-      font-weight: 700;
+      font-size: clamp(38px, 7vw, 72px);
+      line-height: 0.98;
       margin-bottom: 22px;
-    }
-
-    .hero-copy h1 span {
-      display: block;
+      font-weight: 700;
     }
 
     .hero-copy p {
-      max-width: 660px;
-      color: var(--muted);
-      font-size: 16px;
+      color: rgba(255,255,255,0.82);
+      font-size: 15px;
+      max-width: 640px;
     }
 
-    .hero-proof {
+    .hero-points {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 14px;
-      margin: 34px 0;
+      margin: 30px 0;
     }
 
-    .hero-proof-card {
-      padding: 18px 18px 16px;
+    .hero-point {
+      padding: 16px;
       border-radius: var(--radius-md);
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
-    .hero-proof-card small {
+    .hero-point strong {
       display: block;
-      color: rgba(248, 251, 255, 0.58);
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-    }
-
-    .hero-proof-card strong {
-      display: block;
-      font-size: 28px;
+      color: #ffd69f;
+      font-size: 26px;
       line-height: 1;
-      color: var(--gold);
+      margin-bottom: 8px;
     }
 
-    .hero-proof-card span {
-      display: block;
-      margin-top: 10px;
-      color: var(--muted);
+    .hero-point span {
+      color: rgba(255,255,255,0.8);
       font-size: 13px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-      margin-bottom: 16px;
+      gap: 12px;
+      margin-bottom: 12px;
     }
 
-    .button {
-      min-height: 58px;
-      padding: 0 28px;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
+    .hero-note { color: rgba(255,255,255,0.62); font-size: 12px; }
 
-    .button-primary {
-      background: linear-gradient(135deg, var(--coral), #ff9d73);
-      color: white;
-      box-shadow: 0 16px 38px rgba(255, 132, 92, 0.24);
-    }
-
-    .button-secondary {
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .hero-note {
-      color: rgba(248, 251, 255, 0.62);
-      font-size: 12px;
-    }
-
-    .hero-panel {
-      position: relative;
+    .hero-card {
       padding: 28px;
       border-radius: var(--radius-lg);
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.24);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.18);
     }
 
-    .hero-panel::before {
-      content: "";
-      position: absolute;
-      inset: 16px;
-      border-radius: 22px;
-      border: 1px solid rgba(110, 231, 255, 0.16);
-      pointer-events: none;
-    }
-
-    .panel-label {
-      display: inline-flex;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(110, 231, 255, 0.12);
-      color: var(--cyan);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .panel-title {
+    .hero-card h2 {
       font-size: 28px;
-      line-height: 1.22;
+      line-height: 1.25;
       margin-bottom: 18px;
-      color: white;
     }
 
-    .panel-list {
+    .hero-list {
       display: grid;
       gap: 12px;
-      margin-bottom: 22px;
+      list-style: none;
     }
 
-    .panel-item {
-      padding: 16px 18px;
+    .hero-list li {
+      padding: 14px 16px;
       border-radius: var(--radius-sm);
-      background: rgba(8, 18, 32, 0.34);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(8,19,33,0.32);
+      color: rgba(255,255,255,0.86);
+      font-size: 14px;
     }
 
-    .panel-item strong {
-      display: block;
-      color: white;
-      margin-bottom: 4px;
-      font-size: 15px;
-    }
-
-    .panel-item span {
-      color: rgba(248, 251, 255, 0.68);
-      font-size: 13px;
-    }
-
-    .panel-foot {
-      padding: 18px 18px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .signal-band {
+    .signal {
+      margin-top: -26px;
       position: relative;
-      margin-top: -24px;
       z-index: 2;
     }
 
-    .signal-band-inner {
-      padding: 22px 28px;
-      border-radius: 22px;
+    .signal-inner {
       background: white;
+      border-radius: 24px;
       box-shadow: var(--shadow);
+      padding: 24px 26px;
       display: grid;
-      grid-template-columns: 1.3fr repeat(3, minmax(0, 1fr));
-      gap: 20px;
+      grid-template-columns: 1.3fr repeat(3, 1fr);
+      gap: 18px;
       align-items: center;
     }
 
-    .signal-band-lead strong {
+    .signal-lead strong {
       display: block;
-      color: var(--navy);
       font-size: 24px;
-      margin-bottom: 4px;
+      color: var(--navy);
+      margin-bottom: 6px;
     }
 
-    .signal-band-lead span,
-    .signal-cell span {
-      color: var(--ink-soft);
-      font-size: 13px;
-    }
+    .signal-lead span, .signal-cell span { color: var(--muted); font-size: 13px; }
+    .signal-cell strong { display:block; color: var(--navy); font-size: 24px; margin-bottom: 6px; }
 
-    .signal-cell strong {
-      display: block;
-      color: #0d2742;
-      font-size: 26px;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .problem-grid,
-    .service-grid,
-    .reason-grid,
-    .portfolio-grid,
-    .flow-grid,
-    .faq-grid {
+    .cards-3, .portfolio-grid, .faq-grid {
       display: grid;
       gap: 22px;
     }
 
-    .problem-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+    .cards-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .portfolio-grid { grid-template-columns: repeat(2, minmax(0,1fr)); max-width: 980px; margin: 0 auto; }
+    .faq-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
 
-    .problem-card,
-    .service-card,
-    .reason-card,
-    .portfolio-card,
-    .flow-card,
-    .faq-item,
-    .profile-card,
-    .contact-card {
-      background: var(--card);
+    .card, .portfolio-card, .faq-item, .profile-card, .profile-stat, .contact-card, .contact-panel {
+      background: white;
       border-radius: var(--radius-md);
       box-shadow: var(--shadow);
     }
 
-    .problem-card {
+    .card {
       padding: 28px;
-      border-top: 4px solid var(--coral);
+      border-top: 4px solid var(--cyan);
     }
 
-    .problem-card strong,
-    .service-card h3,
-    .reason-card h3,
-    .portfolio-card h3,
-    .flow-card h3,
-    .faq-item summary,
-    .profile-card h3,
-    .contact-card h3 {
-      color: #0f2842;
-    }
-
-    .problem-card strong {
-      display: block;
-      font-size: 18px;
-      line-height: 1.5;
-      margin-bottom: 10px;
-    }
-
-    .problem-card p,
-    .service-card p,
-    .reason-card p,
-    .portfolio-card p,
-    .flow-card p,
-    .profile-card p,
-    .contact-card p {
-      color: var(--ink-soft);
-      font-size: 14px;
-    }
-
-    .service-grid,
-    .reason-grid,
-    .flow-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .service-card,
-    .reason-card,
-    .flow-card {
-      padding: 30px 28px;
-    }
-
-    .service-index,
-    .reason-index,
-    .flow-index {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--cyan-deep), var(--navy));
-      color: white;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 18px;
-      box-shadow: 0 14px 24px rgba(18, 55, 93, 0.18);
-    }
-
-    .service-card h3,
-    .reason-card h3,
-    .flow-card h3 {
-      margin-bottom: 12px;
+    .card h3 {
       font-size: 20px;
+      color: var(--navy);
+      margin-bottom: 12px;
       line-height: 1.45;
     }
 
-    .service-list,
-    .contact-list {
+    .card p { color: var(--muted); font-size: 14px; }
+
+    .card-list {
       list-style: none;
+      margin-top: 16px;
       display: grid;
       gap: 10px;
-      margin-top: 16px;
     }
 
-    .service-list li,
-    .contact-list li {
+    .card-list li {
       position: relative;
       padding-left: 18px;
-      color: var(--ink-soft);
+      color: var(--muted);
       font-size: 14px;
     }
 
-    .service-list li::before,
-    .contact-list li::before {
-      content: "";
+    .card-list li::before {
+      content: '';
       position: absolute;
       left: 0;
-      top: 11px;
+      top: 10px;
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--coral), var(--gold));
+      background: linear-gradient(135deg, var(--orange), var(--cyan));
     }
 
-    .portfolio {
-      background: linear-gradient(180deg, #eef5fb 0%, #f7fbff 100%);
-    }
-
-    .portfolio-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+    .portfolio { background: linear-gradient(180deg, #eef5fb 0%, #f8fbff 100%); }
 
     .portfolio-card {
       overflow: hidden;
@@ -573,80 +363,70 @@
       display: block;
       aspect-ratio: 4 / 3;
       overflow: hidden;
-      background: #dfe7ef;
+      background: #dde6ef;
     }
 
     .portfolio-banner img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.35s ease;
+      transition: transform .35s ease;
     }
 
-    .portfolio-card:hover .portfolio-banner img {
-      transform: scale(1.03);
-    }
+    .portfolio-card:hover .portfolio-banner img { transform: scale(1.03); }
 
     .portfolio-body {
-      padding: 28px;
+      padding: 26px;
       display: flex;
       flex-direction: column;
+      gap: 14px;
       flex: 1;
     }
+
+    .portfolio-body h3 {
+      font-size: 22px;
+      line-height: 1.4;
+      color: var(--navy);
+    }
+
+    .portfolio-body p { color: var(--muted); font-size: 14px; }
 
     .portfolio-body ul {
       list-style: none;
       display: grid;
       gap: 10px;
-      margin-top: 18px;
+      margin-top: 2px;
     }
 
     .portfolio-body li {
-      padding-left: 18px;
       position: relative;
-      color: var(--ink-soft);
+      padding-left: 18px;
+      color: var(--muted);
       font-size: 14px;
     }
 
     .portfolio-body li::before {
-      content: ">";
+      content: '>';
       position: absolute;
       left: 0;
       top: 0;
-      color: var(--cyan-deep);
+      color: var(--cyan);
       font-weight: 700;
     }
 
-    .portfolio-link {
-      margin-top: 24px;
-      width: 100%;
-    }
+    .portfolio-link { width: 100%; margin-top: auto; }
 
-    .profile-wrap {
+    .profile-wrap, .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 380px);
-      gap: 24px;
-      align-items: stretch;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+      align-items: start;
     }
 
-    .profile-card {
-      padding: 34px;
-    }
-
-    .profile-name {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      color: var(--cyan-deep);
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .profile-card h3 {
-      font-size: 34px;
-      line-height: 1.2;
-      margin-bottom: 18px;
-    }
+    .profile-card { padding: 32px; }
+    .profile-card h3 { font-size: 34px; color: var(--navy); margin-bottom: 16px; }
+    .profile-name { color: var(--cyan); font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 10px; }
+    .profile-card p { color: var(--muted); font-size: 14px; }
 
     .profile-stats {
       display: grid;
@@ -655,203 +435,81 @@
 
     .profile-stat {
       padding: 22px 24px;
-      border-radius: var(--radius-md);
-      background: linear-gradient(180deg, #10243b 0%, #16375a 100%);
+      background: linear-gradient(180deg, #102640 0%, #173a60 100%);
       color: white;
     }
 
-    .profile-stat small {
-      display: block;
-      color: rgba(255, 255, 255, 0.68);
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-    }
+    .profile-stat small { display:block; color: rgba(255,255,255,0.68); font-size: 11px; letter-spacing: .16em; margin-bottom: 10px; text-transform: uppercase; }
+    .profile-stat strong { display:block; font-size: 30px; color: #ffd69f; margin-bottom: 8px; }
+    .profile-stat span { color: rgba(255,255,255,0.8); font-size: 13px; }
 
-    .profile-stat strong {
-      display: block;
-      font-size: 32px;
-      line-height: 1;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-
-    .faq-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .faq-item {
-      padding: 24px 26px;
-    }
-
-    .faq-item summary {
-      list-style: none;
-      cursor: pointer;
-      font-size: 17px;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-
-    .faq-item summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .faq-item p {
-      margin-top: 14px;
-      color: var(--ink-soft);
-      font-size: 14px;
-    }
+    .faq-item { padding: 24px 26px; }
+    .faq-item summary { list-style:none; cursor:pointer; color: var(--navy); font-size: 17px; font-weight: 700; }
+    .faq-item summary::-webkit-details-marker { display:none; }
+    .faq-item p { margin-top: 14px; color: var(--muted); font-size: 14px; }
 
     .contact {
-      position: relative;
-      overflow: hidden;
       background:
-        radial-gradient(circle at 20% 18%, rgba(110, 231, 255, 0.16), transparent 25%),
-        radial-gradient(circle at 82% 68%, rgba(255, 132, 92, 0.16), transparent 20%),
-        linear-gradient(140deg, #081220 0%, #122741 100%);
+        radial-gradient(circle at 20% 18%, rgba(79,199,234,0.18), transparent 24%),
+        radial-gradient(circle at 82% 72%, rgba(255,123,77,0.16), transparent 20%),
+        linear-gradient(140deg, #091322 0%, #123151 100%);
       color: white;
     }
 
     .contact .section-heading h2,
-    .contact .section-heading p {
-      color: white;
-    }
+    .contact .section-heading p { color: white; }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 360px);
-      gap: 24px;
-      align-items: start;
-    }
-
-    .contact-card {
-      padding: 32px;
-      background: rgba(255, 255, 255, 0.09);
-      box-shadow: none;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(14px);
-    }
-
-    .contact-card h3,
-    .contact-card p,
-    .contact-list li {
-      color: white;
-    }
-
-    .contact-card p,
-    .contact-list li {
-      color: rgba(255, 255, 255, 0.78);
-    }
-
-    .contact-panel {
+    .contact-card, .contact-panel {
       padding: 30px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+      background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: none;
+      backdrop-filter: blur(10px);
     }
 
-    .contact-panel strong {
-      display: block;
-      font-size: 30px;
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-
-    .contact-panel p {
-      color: rgba(255, 255, 255, 0.78);
-      font-size: 14px;
-      margin-bottom: 24px;
-    }
-
-    .contact-panel .button {
-      width: 100%;
-    }
-
-    .contact-foot {
-      margin-top: 16px;
-      color: rgba(255,255,255,0.62);
-      font-size: 12px;
-    }
+    .contact-card h3, .contact-panel strong { color: white; }
+    .contact-card p, .contact-card li, .contact-panel p, .contact-foot { color: rgba(255,255,255,0.78); }
+    .contact-list { list-style:none; display:grid; gap:10px; margin-top: 16px; }
+    .contact-list li { position:relative; padding-left: 18px; font-size: 14px; }
+    .contact-list li::before { content:''; position:absolute; left:0; top:10px; width:8px; height:8px; border-radius:50%; background:#ffd69f; }
+    .contact-panel strong { display:block; font-size: 30px; line-height:1.2; margin-bottom: 12px; }
+    .contact-panel p { font-size: 14px; margin-bottom: 20px; }
+    .contact-panel .button { width: 100%; }
+    .contact-foot { margin-top: 14px; font-size: 12px; }
 
     footer {
-      background: #06101b;
-      color: rgba(255, 255, 255, 0.52);
+      background: var(--navy-deep);
+      color: rgba(255,255,255,0.55);
       text-align: center;
-      padding: 26px 20px;
+      padding: 24px 16px;
       font-size: 12px;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 960px) {
       .hero-inner,
-      .profile-wrap,
-      .contact-grid,
-      .signal-band-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .service-grid,
-      .reason-grid,
-      .flow-grid,
-      .problem-grid,
+      .signal-inner,
+      .cards-3,
       .portfolio-grid,
       .faq-grid,
-      .hero-proof {
+      .profile-wrap,
+      .contact-grid,
+      .hero-points {
         grid-template-columns: 1fr;
       }
 
-      .signal-band {
-        margin-top: 0;
-      }
+      .signal { margin-top: 0; }
     }
 
     @media (max-width: 720px) {
-      .container {
-        width: min(var(--max), calc(100% - 28px));
-      }
-
-      .section {
-        padding: 84px 0;
-      }
-
-      .topbar-inner {
-        min-height: 64px;
-      }
-
-      .nav a:not(.cta-chip) {
-        display: none;
-      }
-
-      .hero {
-        padding: 56px 0 72px;
-      }
-
-      .hero-copy h1 {
-        font-size: clamp(34px, 12vw, 54px);
-      }
-
-      .hero-panel,
-      .signal-band-inner,
-      .problem-card,
-      .service-card,
-      .reason-card,
-      .portfolio-body,
-      .flow-card,
-      .profile-card,
-      .contact-card,
-      .contact-panel {
-        padding: 24px;
-      }
-
-      .button,
-      .cta-chip {
-        width: 100%;
-      }
-
-      .hero-actions {
-        display: grid;
-      }
+      .section { padding: 72px 0; }
+      .topbar-inner { min-height: 62px; }
+      .nav a:not(.button-primary) { display: none; }
+      .hero { padding: 58px 0 72px; }
+      .hero-card, .card, .portfolio-body, .faq-item, .profile-card, .profile-stat, .contact-card, .contact-panel, .signal-inner { padding: 22px; }
+      .hero-actions { display:grid; }
+      .hero-actions .button { width: 100%; }
+      .button { width: 100%; }
     }
   </style>
 </head>
@@ -860,12 +518,12 @@
     <div class="container topbar-inner">
       <a class="brand" href="#top">
         <small>Landing Page Production</small>
-        <strong>荳ｭ隹ｷ蛛･荳 / LP蛻ｶ菴・/strong>
+        <strong>中谷健一 / LP制作ポートフォリオ</strong>
       </a>
       <nav class="nav">
-        <a href="#service">謾ｯ謠ｴ蜀・ｮｹ</a>
-        <a href="#reason">驕ｸ縺ｰ繧後ｋ逅・罰</a>
-        <a href="#contact" class="cta-chip">辟｡譁呵ｨｺ譁ｭ繧堤嶌隲・☆繧・/a>
+        <a href="#service">支援内容</a>
+        <a href="#portfolio">制作事例</a>
+        <a class="button button-primary" href="#contact">無料診断を相談する</a>
       </nav>
     </div>
   </header>
@@ -874,107 +532,61 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <div class="hero-badge-row">
-            <span class="hero-badge">AI鬧・虚縺ｧ鬮倬滓ｧ狗ｯ・/span>
-            <span class="hero-badge">SEO繝ｩ繧､繝・ぅ繝ｳ繧ｰ遏･隕・/span>
-            <span class="hero-badge">蛟倶ｺｺ縺ｧ繧よ怙蠕後∪縺ｧ莨ｴ襍ｰ</span>
+          <div class="hero-badges">
+            <span class="hero-badge">AI駆動で高速構築</span>
+            <span class="hero-badge">SEOライティング知見</span>
+            <span class="hero-badge">訴求整理から伴走</span>
           </div>
-          <h1 class="serif">
-            <span>螢ｲ繧九◆繧√・謨ｴ逅・ｒ縲・/span>
-            <span>鄒弱＠縺上・/span>
-            <span>騾溘￥縲・/span>
-          </h1>
-          <p>
-            LP縺ｯ隕九◆逶ｮ縺縺代〒縺ｯ蜍輔″縺ｾ縺帙ｓ縲りｪｰ縺ｫ縲∽ｽ輔ｒ縲√←繧薙↑鬆・分縺ｧ螻翫￠繧九°縺ｾ縺ｧ謨ｴ逅・＠縺ｦ縺ｯ縺倥ａ縺ｦ謌先棡縺ｫ霑代▼縺阪∪縺吶・            荳ｭ隹ｷ蛛･荳縺ｯ縲、I縺ｫ繧医ｋ鬮倬溷ｮ溯｣・→讒区・險ｭ險医・荳｡霈ｪ縺ｧ縲∽ｺ区･ｭ縺ｮ蠑ｷ縺ｿ縺御ｼ昴ｏ繧記P繧偵▽縺上ｊ縺ｾ縺吶・          </p>
-
-          <div class="hero-proof">
-            <div class="hero-proof-card">
-              <small>Cloudworks</small>
+          <h1 class="serif">売るための整理を、<br>美しく。<br>速く。</h1>
+          <p>見た目を整えるだけでなく、誰に・何を・どんな順番で伝えるかまで設計したLPを制作します。AIで初速を上げつつ、訴求と仕上げは人の判断で丁寧に詰めます。</p>
+          <div class="hero-points">
+            <div class="hero-point">
               <strong>92%</strong>
-              <span>繝励Ο繧ｸ繧ｧ繧ｯ繝亥ｮ御ｺ・紫</span>
+              <span>クラウドワークス完了率</span>
             </div>
-            <div class="hero-proof-card">
-              <small>Approval</small>
+            <div class="hero-point">
               <strong>100%</strong>
-              <span>謇ｿ隱咲紫繝吶・繧ｹ縺ｮ螳牙ｿ・─</span>
+              <span>承認率ベースの安心感</span>
             </div>
-            <div class="hero-proof-card">
-              <small>Style</small>
+            <div class="hero-point">
               <strong>Text + Design</strong>
-              <span>讒区・縺九ｉ螳溯｣・∪縺ｧ荳豌鈴夊ｲｫ</span>
+              <span>構成から実装まで一気通貫</span>
             </div>
           </div>
-
           <div class="hero-actions">
-            <a class="button button-primary" href="#contact">辟｡譁儉P險ｺ譁ｭ繧堤嶌隲・☆繧・/a>
-            <a class="button button-secondary" href="#portfolio">蟇ｾ蠢懊〒縺阪ｋLP縺ｮ蝙九ｒ隕九ｋ</a>
+            <a class="button button-primary" href="#portfolio">制作事例を見る</a>
+            <a class="button button-secondary" href="#contact">無料LP診断を相談する</a>
           </div>
-          <p class="hero-note">Zoom繧・崕隧ｱ縺ｮ蠑ｷ蠑輔↑蝟ｶ讌ｭ縺ｯ陦後＞縺ｾ縺帙ｓ縲ゅ∪縺壹・隱ｲ鬘後ｄ逶ｮ逧・ｒ繝・く繧ｹ繝医〒蜈ｱ譛峨＞縺溘□縺丞ｽ｢縺ｧ螟ｧ荳亥､ｫ縺ｧ縺吶・/p>
+          <p class="hero-note">強引な営業は行いません。まずはテキストベースの相談からで大丈夫です。</p>
         </div>
-
-        <aside class="hero-panel">
-          <span class="panel-label">What You Get</span>
-          <h2 class="panel-title serif">逶ｸ隲・燕縺ｫ謨ｴ逅・〒縺阪※縺・↑縺上※繧ゅ∝燕縺ｫ騾ｲ繧√∪縺吶・/h2>
-          <div class="panel-list">
-            <div class="panel-item">
-              <strong>讒区・縺後⊂繧薙ｄ繧翫〒繧ょｯｾ蠢・/strong>
-              <span>隱ｲ鬘後∝膚蜩√∫炊諠ｳ鬘ｧ螳｢繧偵ヲ繧｢繝ｪ繝ｳ繧ｰ縺励↑縺後ｉ險ｴ豎りｻｸ繧呈紛縺医∪縺吶・/span>
-            </div>
-            <div class="panel-item">
-              <strong>螳溯｣・□縺代〒邨ゅｏ繧峨↑縺・/strong>
-              <span>隕句・縺励・・分縲，TA驟咲ｽｮ縺ｾ縺ｧ謌先棡縺ｫ蟇・○縺溯ｨｭ險医〒邨・∩遶九※縺ｾ縺吶・/span>
-            </div>
-            <div class="panel-item">
-              <strong>AI繧剃ｽｿ縺・′縲・尅縺ｫ縺ｯ菴懊ｉ縺ｪ縺・/strong>
-              <span>鬮倬溷喧縺ｮ縺溘ａ縺ｫAI繧剃ｽｿ縺・∽ｺｺ縺悟愛譁ｭ縺吶∋縺崎ｨｴ豎ゅｄ莉穂ｸ翫￡縺ｯ荳∝ｯｧ縺ｫ隧ｰ繧√∪縺吶・/span>
-            </div>
-          </div>
-          <div class="panel-foot">蛻ｶ菴應ｼ夂､ｾ縺ｮ繧医≧縺ｪ蛻・･ｭ縺ｧ縺ｯ縺ｪ縺上∬ｨｭ險域э蝗ｳ縺碁壹▲縺溘∪縺ｾ譛蠕後∪縺ｧ莉穂ｸ翫′繧九・縺悟倶ｺｺ蟇ｾ蠢懊・蠑ｷ縺ｿ縺ｧ縺吶・/div>
+        <aside class="hero-card">
+          <h2 class="serif">相談前に全部まとまっていなくても、前に進めます。</h2>
+          <ul class="hero-list">
+            <li>構成が曖昧でも、課題と強みの整理から一緒に進行</li>
+            <li>デザインだけでなく、見出し順とCTA配置まで提案</li>
+            <li>AIを使うのは雑に量産するためではなく、検討時間を増やすため</li>
+          </ul>
         </aside>
       </div>
     </section>
 
-    <div class="signal-band">
-      <div class="container signal-band-inner">
-        <div class="signal-band-lead">
-          <strong class="serif">縺薙・LP閾ｪ菴薙′縲∵署譯亥刀雉ｪ縺ｮ繧ｵ繝ｳ繝励Ν縺ｧ縺吶・/strong>
-          <span>騾溘＆縺縺代〒縺ｪ縺上∬ｨ闡峨・謨ｴ逅・→隕也ｷ壼ｰ守ｷ壹∪縺ｧ蜷ｫ繧√※險ｭ險医＠縺ｦ縺・∪縺吶・/span>
+    <section class="signal">
+      <div class="container signal-inner">
+        <div class="signal-lead">
+          <strong class="serif">このページ自体が、提案品質のサンプルです。</strong>
+          <span>速さだけでなく、読み手の理解順に沿って情報を並べることを大切にしています。</span>
         </div>
         <div class="signal-cell">
           <strong>AI</strong>
-          <span>讒狗ｯ蛾溷ｺｦ繧貞ｺ穂ｸ翫￡</span>
+          <span>構築スピードを底上げ</span>
         </div>
         <div class="signal-cell">
           <strong>SEO</strong>
-          <span>隱ｭ縺ｿ謇狗炊隗｣縺ｮ荳句慍縺ゅｊ</span>
+          <span>読み手理解の土台あり</span>
         </div>
         <div class="signal-cell">
-          <strong>1莠ｺ蟇ｾ蠢・/strong>
-          <span>諢丞峙縺後・繧後★騾ｲ陦・/span>
-        </div>
-      </div>
-    </div>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Problem</span>
-          <h2>縺薙ｓ縺ｪ迥ｶ諷九↑繧峨´P繧剃ｽ懊ｋ諢丞袖縺後≠繧翫∪縺吶・/h2>
-          <p>縲後→繧翫≠縺医★繝壹・繧ｸ縺悟ｿ・ｦ√阪〒縺ｯ縺ｪ縺上√後・繝ｼ繧ｸ繧剃ｽｿ縺｣縺ｦ菴輔ｒ螟峨∴縺溘＞縺九阪′隕九∴縺ｦ縺・ｋ縺ｻ縺ｩ縲´P縺ｯ蠑ｷ縺上↑繧翫∪縺吶・/p>
-        </div>
-        <div class="problem-grid">
-          <article class="problem-card">
-            <strong>繝・じ繧､繝ｳ縺ｯ謨ｴ縺｣縺ｦ縺・ｋ縺ｮ縺ｫ縲∝撫縺・粋繧上○縺ｫ縺､縺ｪ縺後ｉ縺ｪ縺・/strong>
-            <p>隕九◆逶ｮ縺ｮ謨ｴ鬆薙□縺代〒縺ｯ縺ｪ縺上∬ｪｭ縺ｿ謇九・荳榊ｮ峨ｒ鬆・分縺ｫ縺ｻ縺ｩ縺乗ｧ区・縺悟ｿ・ｦ√〒縺吶・/p>
-          </article>
-          <article class="problem-card">
-            <strong>蛻ｶ菴應ｼ夂､ｾ縺ｫ鬆ｼ繧縺ｻ縺ｩ縺ｧ縺ｯ縺ｪ縺・′縲・尅縺ｫ菴懊▲縺ｦ螟ｱ謨励＠縺溘￥縺ｪ縺・/strong>
-            <p>蟆丞屓繧翫・蛻ｩ縺丞倶ｺｺ蟇ｾ蠢懊〒縲∝愛譁ｭ縺ｮ譌ｩ縺輔→蜩∬ｳｪ縺ｮ繝舌Λ繝ｳ繧ｹ繧貞叙繧翫◆縺・こ繝ｼ繧ｹ縺ｫ蜷代＞縺ｦ縺・∪縺吶・/p>
-          </article>
-          <article class="problem-card">
-            <strong>諠・ｱ縺梧淵繧峨・縺｣縺ｦ縺・※縲∽ｽ輔ｒ謇薙■蜃ｺ縺吶∋縺阪°閾ｪ蛻・〒繧よ紛逅・＠縺阪ｌ縺ｪ縺・/strong>
-            <p>繝偵い繝ｪ繝ｳ繧ｰ繧帝壹＠縺ｦ縲∬ｪｰ縺ｫ菴輔ｒ螻翫￠繧記P縺九ｒ荳邱偵↓險隱槫喧縺励※縺・″縺ｾ縺吶・/p>
-          </article>
+          <strong>1人対応</strong>
+          <span>意図がぶれず進行</span>
         </div>
       </div>
     </section>
@@ -983,93 +595,36 @@
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Service</span>
-          <h2>蛻ｶ菴懊□縺代〒縺ｪ縺上∵・譫懊↓霑代▼縺上◆繧√・譚先侭縺ｾ縺ｧ謨ｴ縺医∪縺吶・/h2>
-          <p>蜊倥↓HTML繧堤ｵ・・縺ｮ縺ｧ縺ｯ縺ｪ縺上∬ｨｴ豎よ紛逅・°繧韻TA險ｭ險医∪縺ｧ蜷ｫ繧√※LP蜈ｨ菴薙ｒ莉慕ｫ九※縺ｾ縺吶・/p>
+          <h2>制作だけでなく、成果につながる整理まで引き受けます。</h2>
+          <p>単にHTMLを組むのではなく、訴求整理からCTA設計まで含めてLP全体を組み立てます。</p>
         </div>
-        <div class="service-grid">
-          <article class="service-card">
-            <div class="service-index">01</div>
-            <h3>讒区・險ｭ險医→險ｴ豎よ紛逅・/h3>
-            <p>蠑ｷ縺ｿ縲・｡ｧ螳｢蜒上∵ｯ碑ｼ・ｯｾ雎｡縲∽ｸ榊ｮ芽ｦ∫ｴ繧呈紛逅・＠縺ｦ縲√←縺薙〒菴輔ｒ莨昴∴繧九∋縺阪°繧定ｨｭ險医＠縺ｾ縺吶・/p>
-            <ul class="service-list">
-              <li>繝輔ぃ繝ｼ繧ｹ繝医ン繝･繝ｼ縺ｮ險縺・・繧頑紛逅・/li>
-              <li>隕句・縺鈴・ｺ上→CTA蟆守ｷ壹・險ｭ險・/li>
-              <li>遶ｶ蜷医→蟾ｮ蛻･蛹悶☆繧九◆繧√・險隱槫喧</li>
+        <div class="cards-3">
+          <article class="card">
+            <h3>構成設計と訴求整理</h3>
+            <p>商品特性、理想顧客、比較対象、不安要素を洗い出し、どこで何を伝えるべきかを整理します。</p>
+            <ul class="card-list">
+              <li>ファーストビューの言い切り整理</li>
+              <li>見出しの順番とCTA導線の設計</li>
+              <li>競合との差別化ポイントの言語化</li>
             </ul>
           </article>
-          <article class="service-card">
-            <div class="service-index">02</div>
-            <h3>AI豢ｻ逕ｨ縺ｫ繧医ｋ鬮倬溷ｮ溯｣・/h3>
-            <p>逕滓・AI繧定｣懷勧霈ｪ縺ｨ縺励※菴ｿ縺・∝・騾溘ｒ荳翫￡縺ｪ縺後ｉ繧ゅ∵怙邨ら噪縺ｪ繝医・繝ｳ繧・ｯ・ｺｦ縺ｯ莠ｺ縺ｮ逶ｮ縺ｧ隧ｰ繧√∪縺吶・/p>
-            <ul class="service-list">
-              <li>遏ｭ邏肴悄縺ｧ繧らｴ邯ｻ縺励↓縺上＞蛻ｶ菴懊ヵ繝ｭ繝ｼ</li>
-              <li>繧ｳ繝斐・縺ｨ繝・じ繧､繝ｳ縺ｮ蠕蠕ｩ縺碁溘＞</li>
-              <li>蠢・ｦ√↓蠢懊§縺ｦ謾ｹ蝟・燕謠舌・縺溘◆縺榊床繧よ署遉ｺ</li>
+          <article class="card">
+            <h3>AI活用による高速実装</h3>
+            <p>初動を速めながらも、案件ごとのトーンや密度が薄くならないよう最終判断は人が担います。</p>
+            <ul class="card-list">
+              <li>短納期でも破綻しにくい制作フロー</li>
+              <li>文言とデザインの往復が速い</li>
+              <li>改善前提のたたき台づくりにも対応</li>
             </ul>
           </article>
-          <article class="service-card">
-            <div class="service-index">03</div>
-            <h3>蜈ｬ髢句ｾ後ｒ隕区紺縺医◆莉穂ｸ翫￡</h3>
-            <p>隱ｭ縺ｿ繧・☆縺輔√せ繝槭・陦ｨ遉ｺ縲，TA莉倩ｿ代・蠢・炊髫懷｣√↑縺ｩ縲∝ｮ滄圀縺ｮ髮｢閼ｱ繝昴う繝ｳ繝医ｒ諢剰ｭ倥＠縺ｦ謨ｴ縺医∪縺吶・/p>
-            <ul class="service-list">
-              <li>繝｢繝舌う繝ｫ繝輔ぃ繝ｼ繧ｹ繝医・陦ｨ遉ｺ隱ｿ謨ｴ</li>
-              <li>FAQ繧・｣懆ｶｳ蟆守ｷ壹・霑ｽ蜉</li>
-              <li>蠕後°繧牙ｷｮ縺玲崛縺医ｄ縺吶＞讒矩縺ｧ螳溯｣・/li>
+          <article class="card">
+            <h3>公開後を見据えた仕上げ</h3>
+            <p>スマホ表示、CTA前の心理障壁、FAQなど、離脱しやすい箇所まで含めて整えます。</p>
+            <ul class="card-list">
+              <li>モバイルファーストの最終調整</li>
+              <li>補足導線やFAQの設計</li>
+              <li>差し替えしやすい構造で実装</li>
             </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Flow</span>
-          <h2>騾ｲ繧∵婿縺後す繝ｳ繝励Ν縺縺九ｉ縲∽ｾ晞ｼ縺励ｄ縺吶＞縲・/h2>
-          <p>譛蛻昴°繧牙・縺ｦ豎ｺ縺ｾ縺｣縺ｦ縺・↑縺上※繧ょ､ｧ荳亥､ｫ縺ｧ縺吶ゅ∪縺壹・莠区･ｭ縺ｮ迴ｾ迥ｶ縺ｨ逶ｮ逧・°繧峨せ繧ｿ繝ｼ繝医〒縺阪∪縺吶・/p>
-        </div>
-        <div class="flow-grid">
-          <article class="flow-card">
-            <div class="flow-index">01</div>
-            <h3>隱ｲ鬘後・蜈ｱ譛・/h3>
-            <p>迴ｾ迥ｶ縺ｮ謔ｩ縺ｿ縲∝膚蜩∫音諤ｧ縲・寔螳｢迥ｶ豕√∫炊諠ｳ縺ｮ逹蝨ｰ轤ｹ繧偵ユ繧ｭ繧ｹ繝医・繝ｼ繧ｹ縺ｧ遒ｺ隱阪＠縺ｾ縺吶・/p>
-          </article>
-          <article class="flow-card">
-            <div class="flow-index">02</div>
-            <h3>讒区・縺ｮ謠先｡・/h3>
-            <p>隱ｰ縺ｫ縺ｩ縺・絢縺吶°繧呈紛逅・＠縲√ヵ繧｡繝ｼ繧ｹ繝医ン繝･繝ｼ縺九ｉCTA縺ｾ縺ｧ縺ｮ鬪ｨ譬ｼ繧呈署譯医＠縺ｾ縺吶・/p>
-          </article>
-          <article class="flow-card">
-            <div class="flow-index">03</div>
-            <h3>蛻ｶ菴懊→隱ｿ謨ｴ</h3>
-            <p>繝・じ繧､繝ｳ縺ｨ螳溯｣・ｒ縺ｾ縺ｨ繧√※騾ｲ陦後＠縲∝ｿ・ｦ√↓蠢懊§縺ｦ譁・ｨ繧・・ｺ上ｒ荳邱偵↓蠕ｮ隱ｿ謨ｴ縺励∪縺吶・/p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="reason">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Reason</span>
-          <h2>驕ｸ縺ｰ繧後ｋ逅・罰縺ｯ縲・溘＆繧医ｊ繧ゅ梧э蝗ｳ縺碁壹ｋ縺薙→縲阪〒縺吶・/h2>
-          <p>蛻ｶ菴懊・騾比ｸｭ縺ｧ諢丞峙縺後％縺ｼ繧瑚誠縺｡繧九→縲∬ｦ九◆逶ｮ縺ｯ謨ｴ縺｣縺ｦ繧ょ｣ｲ繧後↓縺上＞LP縺ｫ縺ｪ繧翫∪縺吶ゅ◎縺薙ｒ蟠ｩ縺輔↑縺・ｲ繧∵婿繧貞､ｧ莠九↓縺励※縺・∪縺吶・/p>
-        </div>
-        <div class="reason-grid">
-          <article class="reason-card">
-            <div class="reason-index">A</div>
-            <h3>繧ｳ繝斐・縺ｨ繝・じ繧､繝ｳ繧貞・縺代☆縺弱↑縺・/h3>
-            <p>險闡峨→隕九◆逶ｮ繧貞挨縲・↓菴懊ｋ縺ｨ縲∬ｨｴ豎ゅ・闃ｯ縺後★繧後ｄ縺吶￥縺ｪ繧翫∪縺吶よ怙蛻昴°繧我ｸ縺､縺ｮ譁・ц縺ｧ莉穂ｸ翫￡縺ｾ縺吶・/p>
-          </article>
-          <article class="reason-card">
-            <div class="reason-index">B</div>
-            <h3>AI繧剃ｽｿ縺・炊逕ｱ縺梧・遒ｺ</h3>
-            <p>AI縺ｯ驥冗肇縺ｮ縺溘ａ縺ｧ縺ｯ縺ｪ縺上∝・蜍輔ｒ騾溘ａ縺ｦ讀懆ｨ取凾髢薙ｒ蠅励ｄ縺吶◆繧√↓菴ｿ縺・∪縺吶る溘＞縺ｮ縺ｫ阮・￥縺ｪ繧翫↓縺上＞騾ｲ繧∵婿縺ｧ縺吶・/p>
-          </article>
-          <article class="reason-card">
-            <div class="reason-index">C</div>
-            <h3>蛟倶ｺｺ縺縺九ｉ逶ｸ隲・′隧ｰ縺ｾ繧翫↓縺上＞</h3>
-            <p>縲瑚ｪｰ縺ｫ遒ｺ隱阪☆繧後・縺・＞縺句・縺九ｉ縺ｪ縺・阪′襍ｷ縺阪↓縺上￥縲∬ｨｴ豎ょ､画峩繧・ｦ九○譁ｹ縺ｮ菫ｮ豁｣繧りｻｽ繧・°縺ｫ蝗槭○縺ｾ縺吶・/p>
           </article>
         </div>
       </div>
@@ -1078,9 +633,9 @@
     <section class="section portfolio" id="portfolio">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Portfolio Type</span>
-          <h2>螳溽ｸｾURL縺ｮ蛟句挨蜈ｱ譛峨′髮｣縺励＞譯井ｻｶ縺ｧ繧ゅ∵署譯医〒縺阪ｋLP縺ｮ蝙九・譏守｢ｺ縺ｧ縺吶・/h2>
-          <p>遨ｺ縺ｮ蝓九ａ霎ｼ縺ｿ譫繧医ｊ縲√←繧薙↑蜍昴■遲九〒邨・ａ繧九°繧貞・縺ｫ隕九○縺溘⊇縺・′縲∫嶌隲・燕縺ｮ繧､繝｡繝ｼ繧ｸ縺梧ｹｧ縺阪ｄ縺吶￥縺ｪ繧翫∪縺吶・/p>
+          <span class="eyebrow">Portfolio</span>
+          <h2>実際に見られるLP事例</h2>
+          <p>バナー画像からそのまま実ページへ遷移できます。下のボタンからでも確認できます。</p>
         </div>
         <div class="portfolio-grid">
           <article class="portfolio-card">
@@ -1113,40 +668,39 @@
               <a class="button button-secondary portfolio-link" href="https://glowing-begonia-5ae03b.netlify.app" target="_blank" rel="noopener noreferrer">このLPを見る</a>
             </div>
           </article>
-        </div>      </div>
+        </div>
+      </div>
     </section>
 
     <section class="section">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Profile</span>
-          <h2>繝・け繝弱Ο繧ｸ繝ｼ縺ｨ縺薙→縺ｰ縺ｮ髢薙ｒ縺､縺ｪ縺仙宛菴懆・〒縺吶・/h2>
-          <p>蜊倥↓菴懊ｌ繧九□縺代〒縺ｪ縺上∽ｽ輔ｒ縺ｩ縺・ｼ昴∴繧九∋縺阪°繧呈紛逅・＠縺ｪ縺後ｉ莨ｴ襍ｰ縺ｧ縺阪ｋ縺薙→縺悟ｼｷ縺ｿ縺ｧ縺吶・/p>
+          <h2>テクノロジーとことばの間をつなぐ制作者です。</h2>
+          <p>単に作れるだけでなく、何をどう伝えるべきかを整理しながら伴走できることが強みです。</p>
         </div>
         <div class="profile-wrap">
           <article class="profile-card">
             <div class="profile-name">Kenichi Nakatani</div>
-            <h3>荳ｭ隹ｷ 蛛･荳</h3>
-            <p>
-              遏ｳ蟾晉恁驥第ｲ｢蟶ゅｒ諡轤ｹ縺ｫ豢ｻ蜍輔ゆｺｬ驛ｽ螟門嵜隱槫､ｧ蟄ｦ蜊偵・≡豐｢螟ｧ蟄ｦ螟ｧ蟄ｦ髯｢菫ｮ莠・・              莉匁･ｭ蜍吝ｰょｿｵ譛滄俣繧堤ｵ後※繝輔Μ繝ｼ繝ｩ繝ｳ繧ｹ繧貞・髢九＠縲、I繝ｻ閾ｪ蜍募喧繧ｷ繧ｹ繝・Β縺ｮ讒狗ｯ峨°繧姥eb蛻ｶ菴懊∪縺ｧ縲・              繝・け繝弱Ο繧ｸ繝ｼ縺ｨ繝・じ繧､繝ｳ繧呈寺縺大粋繧上○縺滓署譯医ｒ陦後▲縺ｦ縺・∪縺吶・            </p>
-            <p style="margin-top: 16px;">
-              縲後↑繧薙→縺ｪ縺丈ｽ懊ｋ縲阪・縺ｧ縺ｯ縺ｪ縺上∽ｺ区･ｭ縺ｮ蠑ｷ縺ｿ縺ｨ隱ｭ縺ｿ謇九・蠢・炊繧呈紛逅・＠縺ｦ縲∵・譫懊↓縺､縺ｪ縺後ｋ蟆守ｷ壹∈關ｽ縺ｨ縺苓ｾｼ繧縺ｮ縺悟ｾ玲э縺ｧ縺吶・            </p>
+            <h3>中谷 健一</h3>
+            <p>石川県金沢市を拠点に活動。京都外国語大学卒、金沢大学大学院修了。他業務専念期間を経てフリーランスを再開し、AI・自動化システムの構築からWeb制作まで、テクノロジーとデザインを掛け合わせた提案を行っています。</p>
+            <p style="margin-top: 14px;">「なんとなく作る」のではなく、事業の強みと読み手の心理を整理して、成果につながる導線へ落とし込むのが得意です。</p>
           </article>
           <aside class="profile-stats">
             <div class="profile-stat">
               <small>Overall Rating</small>
               <strong>4.4 / 5.0</strong>
-              <span>邯咏ｶ夂噪縺ｪ隧穂ｾ｡縺ｮ遨阪∩荳翫￡縺後≠繧翫∪縺吶・/span>
+              <span>継続的な評価の積み上げがあります。</span>
             </div>
             <div class="profile-stat">
               <small>Completed Projects</small>
-              <strong>14莉ｶ</strong>
-              <span>1莉ｶ縺斐→縺ｮ蟇・ｺｦ繧剃ｿ昴■縺ｪ縺後ｉ遨阪∩荳翫￡縺溷ｮ溽ｸｾ縺ｧ縺吶・/span>
+              <strong>14件</strong>
+              <span>1件ごとの密度を保ちながら積み上げた実績です。</span>
             </div>
             <div class="profile-stat">
               <small>Completion Rate</small>
               <strong>92%</strong>
-              <span>騾比ｸｭ縺ｧ謚輔￡蜃ｺ縺輔★縲∵怙蠕後∪縺ｧ莨ｴ襍ｰ縺吶ｋ蟋ｿ蜍｢繧帝㍾隕悶＠縺ｦ縺・∪縺吶・/span>
+              <span>途中で投げ出さず、最後まで伴走する姿勢を大切にしています。</span>
             </div>
           </aside>
         </div>
@@ -1157,25 +711,25 @@
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">FAQ</span>
-          <h2>逶ｸ隲・燕縺ｫ繧医￥縺ゅｋ荳榊ｮ峨↓縲∝・縺ｫ遲斐∴縺ｾ縺吶・/h2>
-          <p>萓晞ｼ縺ｮ縺励ｄ縺吶＆縺ｯ縲∝撫縺・粋繧上○蜑阪・螳牙ｿ・─縺ｧ縺九↑繧雁､峨ｏ繧翫∪縺吶ゅ％縺薙・縺ゅ∴縺ｦ蜴壹ａ縺ｫ縺励※縺ゅｊ縺ｾ縺吶・/p>
+          <h2>相談前によくある不安に答えます。</h2>
+          <p>最初から全てが決まっていなくても大丈夫です。まずは現状と目的から共有いただければ進められます。</p>
         </div>
         <div class="faq-grid">
           <details class="faq-item" open>
-            <summary>縺ｾ縺讒区・縺悟崋縺ｾ縺｣縺ｦ縺・∪縺帙ｓ縲ゅ◎繧後〒繧ら嶌隲・〒縺阪∪縺吶°・・/summary>
-            <p>螟ｧ荳亥､ｫ縺ｧ縺吶ゅ・縺励ｍ讒区・縺梧尠譏ｧ縺ｪ谿ｵ髫弱⊇縺ｩ縲∫嶌隲・＞縺溘□縺丈ｾ｡蛟､縺後≠繧翫∪縺吶ら岼逧・∝膚蜩√∫炊諠ｳ鬘ｧ螳｢繧定ｵｷ轤ｹ縺ｫ謨ｴ逅・＠縺ｾ縺吶・/p>
+            <summary>構成がまだ固まっていません。それでも相談できますか？</summary>
+            <p>大丈夫です。目的、商品、理想顧客を起点に、どんな順番で伝えるべきかを一緒に整理します。</p>
           </details>
           <details class="faq-item" open>
-            <summary>譁・ｫ繧ょ性繧√※縺企｡倥＞縺ｧ縺阪∪縺吶°・・/summary>
-            <p>縺ｯ縺・ょ・蜴溽ｨｿ縺後≠繧句ｴ蜷医・謨ｴ縺医√↑縺・ｴ蜷医ｂ繝偵い繝ｪ繝ｳ繧ｰ蜀・ｮｹ繧偵ｂ縺ｨ縺ｫ隕句・縺励ｄ譛ｬ譁・・鬪ｨ譬ｼ繧呈署譯医＠縺ｾ縺吶・/p>
+            <summary>文章も含めてお願いできますか？</summary>
+            <p>はい。元原稿がある場合は整え、ない場合もヒアリング内容をもとに見出しや本文の骨格を提案します。</p>
           </details>
           <details class="faq-item">
-            <summary>AI繧剃ｽｿ縺・→縲√←縺薙°莨ｼ縺溘ｈ縺・↑LP縺ｫ縺ｪ繧翫∪縺帙ｓ縺具ｼ・/summary>
-            <p>莨ｼ縺ｦ縺励∪縺・・縺ｯ縲、I縺ｫ荳ｸ謚輔￡縺励◆蝣ｴ蜷医〒縺吶るｫ倬溷喧縺ｫ縺ｯ菴ｿ縺・∪縺吶′縲∬ｨｴ豎りｻｸ繧・ｻ穂ｸ翫￡縺ｯ譯井ｻｶ縺斐→縺ｫ莠ｺ縺悟愛譁ｭ縺励※隧ｰ繧√∪縺吶・/p>
+            <summary>AIを使うと、似たようなLPになりませんか？</summary>
+            <p>似てしまうのはAIに丸投げした場合です。高速化には使いますが、訴求軸や最終仕上げは案件ごとに人が判断して詰めます。</p>
           </details>
           <details class="faq-item">
-            <summary>縺ｾ縺壹・霆ｽ縺冗嶌隲・□縺代〒繧ょ､ｧ荳亥､ｫ縺ｧ縺吶°・・/summary>
-            <p>繧ゅ■繧阪ｓ縺ｧ縺吶ら┌逅・↑蝟ｶ讌ｭ縺ｯ縺帙★縲∫樟迥ｶ縺ｮ隱ｲ鬘後↓蟇ｾ縺励※LP縺梧怏蜉ｹ縺九←縺・°繧ょ性繧√※邇・峩縺ｫ縺願ｿ斐＠縺励∪縺吶・/p>
+            <summary>まずは軽く相談だけでも大丈夫ですか？</summary>
+            <p>もちろんです。無理な営業はせず、現状の課題に対してLPが有効かどうかも含めて率直にお返しします。</p>
           </details>
         </div>
       </div>
@@ -1185,25 +739,25 @@
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Contact</span>
-          <h2>縺ｾ縺壹・縲√＞縺ｾ蝗ｰ縺｣縺ｦ縺・ｋ縺薙→縺縺第蕗縺医※縺上□縺輔＞縲・/h2>
-          <p>邂・擅譖ｸ縺阪〒繧ょ､ｧ荳亥､ｫ縺ｧ縺吶ょ・螳ｹ縺悟崋縺ｾ縺｣縺ｦ縺・↑縺上※繧ゅ∫嶌隲・＠縺ｪ縺後ｉ謨ｴ逅・〒縺阪∪縺吶・/p>
+          <h2>まずは、いま困っていることだけ教えてください。</h2>
+          <p>箇条書きでも大丈夫です。内容が固まっていなくても、相談しながら整理できます。</p>
         </div>
         <div class="contact-grid">
           <article class="contact-card">
-            <h3>蜈ｱ譛峨＞縺溘□縺代ｋ縺ｨ騾ｲ縺ｿ繧・☆縺・・螳ｹ</h3>
-            <p>蜈ｨ驛ｨ縺昴ｍ縺｣縺ｦ縺・↑縺上※繧ょ撫鬘後≠繧翫∪縺帙ｓ縲ゅ≠繧九ｂ縺ｮ縺縺代〒螟ｧ荳亥､ｫ縺ｧ縺吶・/p>
+            <h3>共有いただけると進みやすい内容</h3>
+            <p>全部そろっていなくても問題ありません。あるものだけで大丈夫です。</p>
             <ul class="contact-list">
-              <li>菴輔ｒ螢ｲ繧翫◆縺ЛP縺・/li>
-              <li>莉翫・髮・ｮ｢繧・撫縺・粋繧上○縺ｮ隱ｲ鬘・/li>
-              <li>蜿り・↓縺励◆縺・し繧､繝医ｄ遶ｶ蜷・RL</li>
-              <li>蟶梧悍縺吶ｋ蜈ｬ髢区凾譛溘ｄ縺悶▲縺上ｊ莠育ｮ玲─</li>
+              <li>何を売りたいLPか</li>
+              <li>今の集客や問い合わせの課題</li>
+              <li>参考にしたいサイトや競合URL</li>
+              <li>希望する公開時期やざっくり予算感</li>
             </ul>
           </article>
           <aside class="contact-panel">
-            <strong class="serif">辟｡譁儉P險ｺ譁ｭ縺ｮ蜈･蜿｣繧偵√％縺薙↓髮・ｴ・・/strong>
-            <p>螳滄°逕ｨ譎ゅ・縺薙・繝懊ち繝ｳ繧偵ヵ繧ｩ繝ｼ繝繧・ｿ懷供蟆守ｷ壹↓蟾ｮ縺玲崛縺医ｋ縺縺代〒菴ｿ縺医ｋ讒区・縺ｫ縺励※縺ゅｊ縺ｾ縺吶・/p>
-            <a class="button button-primary" href="#">辟｡譁儉P險ｺ譁ｭ繧ｷ繝ｼ繝医∈騾ｲ繧</a>
-            <div class="contact-foot">繝輔か繝ｼ繝URL譛ｪ險ｭ螳壹・縺溘ａ縲∫樟迥ｶ縺ｯ蟾ｮ縺玲崛縺亥燕縺ｮ蟆守ｷ壹Λ繝吶Ν縺ｨ縺励※驟咲ｽｮ縺励※縺・∪縺吶・/div>
+            <strong class="serif">無料LP診断の入口を、ここに。</strong>
+            <p>実運用時はこのボタンをフォームや応募導線に差し替えるだけで使える構成にしてあります。</p>
+            <a class="button button-primary" href="#">無料LP診断シートへ進む</a>
+            <div class="contact-foot">フォームURL未設定のため、現状は差し替え前のラベルとして配置しています。</div>
           </aside>
         </div>
       </div>
@@ -1215,6 +769,3 @@
   </footer>
 </body>
 </html>
-
-
-
